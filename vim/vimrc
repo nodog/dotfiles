@@ -1,0 +1,382 @@
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+Bundle 'inkpot'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'SuperTab'
+Bundle 'bash-support.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Yggdroot/indentLine' 
+Bundle 'Puppet-Syntax-Highlighting'
+Bundle 'matchit.zip'
+Bundle 'Tabular'
+Bundle 'kein/ctrlp.vim'
+Bundle 'rking/ag.vim'
+"Bundle 'ruby-matchit'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+" non-GitHub repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" Git repos on your local machine (i.e. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
+
+
+"
+" programming
+" nodog
+" 2013-12-26
+"
+" vimrc
+" is the run commands file for vim. 
+" I'm installing mine in ~/.vim/nodogvimrc/vimrc and then linking that
+" to ~/.vim/vimrc.
+
+"---colorschemes------------
+set t_Co=256
+" this is necessary so that the CSApprox plugin can run (and the
+" colorscheme is installed in ~/.vim/colors
+"colorscheme candycode
+colorscheme inkpot
+"colorscheme matrix
+"colorscheme vividchalk
+"colorscheme dw_orange
+"colorscheme anotherdark
+"colorscheme asu1dark
+" as is this parameter
+" and it seems to be necessary to change to reporting xterm-color256 in iterm2
+
+" URL: http://vim.wikia.com/wiki/Example_vimrc
+" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
+" Description: A minimal, but feature rich, example .vimrc. If you are a
+"              newbie, basing your first .vimrc on this file is a good choice.
+"              If you're a more advanced user, building your own .vimrc based
+"              on this file is still a good idea.
+
+"------------------------------------------------------------
+" Features {{{1
+"
+" These options and commands enable some very useful features in Vim, that
+" no user should have to live without.
+
+" Set 'nocompatible' to ward off unexpected things that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+"set nocompatible
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+"filetype indent plugin on
+
+" Enable syntax highlighting
+syntax on
+
+"------------------------------------------------------------
+" Must have options {{{1
+"
+" These are highly recommended options.
+
+" Vim with default settings does not allow easy switching between multiple files
+" in the same editor window. Users can use multiple split windows or multiple
+" tab pages to edit multiple files, but it is still best to enable an option to
+" allow easier switching between files.
+"
+" One such option is the 'hidden' option, which allows you to re-use the same
+" window and switch from an unsaved buffer without saving it first. Also allows
+" you to keep an undo history for multiple files when re-using the same window
+" in this way. Note that using persistent undo also lets you undo in multiple
+" files even in the same window, but is less efficient and is actually designed
+" for keeping undo history after closing Vim entirely. Vim will complain if you
+" try to quit without saving, and swap files will keep you safe if your computer
+" crashes.
+set hidden
+
+" Note that not everyone likes working this way (with the hidden option).
+" Alternatives include using tabs or split windows instead of re-using the same
+" window as mentioned above, and/or either of the following options:
+" set confirm
+" set autowriteall
+
+" Better command-line completion
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+
+" allows partial searches as typed
+set incsearch
+
+" Modelines have historically been a source of security vulnerabilities. As
+" such, it may be a good idea to disable them and use the securemodelines
+" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
+" set nomodeline
+
+
+"------------------------------------------------------------
+" Usability options {{{1
+"
+" These are options that users frequently set in their .vimrc. Some of them
+" change Vim's behaviour in ways which deviate from the true Vi way, but
+" which are considered to add usability. Which, if any, of these options to
+" use is very much a personal preference, but they are harmless.
+
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
+set autoindent
+
+" Stop certain movements from always going to the first character of a line.
+" While this behaviour deviates from that of Vi, it does what most users
+" coming from other editors would expect.
+set nostartofline
+
+" Display the cursor position on the last line of the screen or in the status
+" line of a window
+set ruler
+
+" Always display the status line, even if only one window is displayed
+set laststatus=2
+
+" Instead of failing a command because of unsaved changes, instead raise a
+" dialogue asking if you wish to save changed files.
+" set confirm
+
+" Use visual bell instead of beeping when doing something wrong
+set visualbell
+
+" And reset the terminal code for the visual bell. If visualbell is set, and
+" this line is also included, vim will neither flash nor beep. If visualbell
+" is unset, this does nothing.
+set t_vb=
+
+" Enable use of the mouse for all modes
+set mouse=a
+
+" Set the command window height to 2 lines, to avoid many cases of having to
+" "press <Enter> to continue"
+set cmdheight=2
+
+" Display line numbers on the left
+set number
+
+" Quickly time out on keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=200
+
+" Use <F11> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F10>
+
+" nodog - completion (ctrl-N, ctrl-P)
+" the default (current buffer, other window buffers, buffers in buffer list, 
+" unloaded buffers in bufferlist, tag completion, and included files
+"set complete=.,w,b,u,t,i   
+"set complete=.,w,b,t	    " is derek wyatt's setting
+
+"------------------------------------------------------------
+" statusline
+" set statusline=
+" set statusline +=%1*\ %n\ %*            "buffer number
+" set statusline +=%5*%{&ff}%*            "file format
+" set statusline +=%3*%y%*                "file type
+" set statusline +=%4*\ %<%F%*            "full path
+" set statusline +=%2*%m%*                "modified flag
+" set statusline +=%1*%=%5l%*             "current line
+" set statusline +=%2*/%L%*               "total lines
+" set statusline +=%1*%4v\ %*             "virtual column number
+" set statusline +=%2*0x%04B\ %*          "character under cursor
+" jamessan's
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%F\                          " file name
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+set statusline+=%{&fileformat}]              " file format
+set statusline+=%=                           " right align
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+set statusline+=%b,0x%-8B\                   " current char
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+"------------------------------------------------------------
+" Indentation options {{{1
+"
+" Indentation settings according to personal preference.
+
+" Indentation settings for using 2 spaces instead of tabs.
+" Do not change 'tabstop' from its default value of 8 with this setup.
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" Indentation settings for using hard tabs for indent. Display tabs as
+" two characters wide.
+"set shiftwidth=2
+"set tabstop=2
+
+
+"------------------------------------------------------------
+" Mappings {{{1
+"
+" Useful mappings
+
+" unmap <F1> to help (unmap doesn't work b/c it's built in)
+nmap <F1> <nop>
+imap <F1> <nop>
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+" map Y y$
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" map <F7> to write and make the current file using the makeprg and compiler settings
+nmap <F7> :w<CR>:make<CR>
+
+" NERDTree
+nmap <F1> :NERDTreeToggle<CR>
+
+"let NERDTreeShowHidden=1 
+"autocmd VimEnter * NERDTree 
+
+" autocmd VimEnter * wincmd p
+
+" typing :w!! will auto exapnd to :w !sudo tee % so you can save a readonly file 
+"cmap w!! w !sudo tee >/dev/null %
+
+"------------------------------------------------------------
+" Filetypes 
+" filetype on         "default
+" filetype indent on  "default
+" filetype plugin on  "default
+
+" Ruby - moved to ~/.vim/after/ftplugin/ruby.vim
+"autocmd FileType ruby compiler ruby
+"autocmd FileType ruby set makeprg=ruby\ -w\ $*\ %
+" text - moved to ~/.vim/after/ftplugin/text.vim
+"autocmd FileType text setlocal textwidth=0 wrapmargin=0
+
+
+"------------------------------------------------------------
+" for warking with the clipboard on os x
+set clipboard=unnamed
+
+let g:indentLine_char='·' 
+
+"---unsectioned previous vimrc-----------------------
+" Things with "above in front are set above this line.
+" I've added a quote in front of every line, because this is an OLD
+" file, and defaults may have changed. I'll get back to these later.
+" I am removing these by hand as I go through and understand them again.
+
+" set background=dark
+" "above set backspace=indent,eol,start
+" set nocindent
+" set cinkeys=0{,0},:,0#,!^F,o,O,e
+" set cinoptions=
+" set cinwords=if,else,while,do,for,switch
+" set clipboard=unnamed
+" set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+" set nocompatible
+" set noerrorbells
+" set noexpandtab
+" set nrformats=hex
+" "above set number
+" filetype on
+" filetype indent on
+" filetype plugin on 
+" set guifont=Monaco:h16
+" "above set ignorecase
+" "above set laststatus=2
+" set mouse=a
+" "set mousefocus
+" set patchmode=
+" "above set ruler
+" set nosmartindent
+" set shiftwidth=2
+" "above set showcmd
+" set sidescroll=3
+" "above set smartcase
+" set softtabstop=0
+" "set swapsync=sync
+" set textwidth=72
+" set ttymouse=xterm2
+" set novisualbell
+" "set wildmode=list
+" set wrap
+" "set wrapmargin=10
+" 
+" " F1 is taken
+" " F2 starts another chuck shred with the current file
+" "map <F2> :w:!chuck + %
+" " F4 checks the chuck status
+" "map <F4> :!chuck --status
+" " F5 reformats the line
+" map <F5> gq} 
+" " F7 removes .wav from the screen and replaces _ and - with space
+" "map <F7> :%s/\(\.wav\\|\.ogg\\|\.mp3\\|\.MP3\\|\.flac\)//g:%s/[_,-]/ /g
+" " F8 changes to the Esperanto keymap
+" "map <F8> :set keymap=esperanto_utf-8
+" " F9 sends the output to latex
+" "map <F7> :w:!make
+" " F10 sends the output to latex
+" "map <F10> :w:!pdflatex %
+" " F11 latex's preproposal
+" "map <F11> :w:!latex dissertation.tex
+" " F12 xdvi's preproposal
+" "map <F12> :w:!xdvi ResearchProposal.dvi &
+" 
+" "colors
+" if &t_Co > 1
+"    if has("syntax")
+"       syntax on
+"    endif
+" endif
+" 
+" " Only do this part when compiled with support for autocommands.
+" "if has("autocmd")
+" "   autocmd! BufReadPost * "removes the stupid jump-to-last-position
+"    "autocmd! BufRead   *.c,*.cc,*.cpp,*.h,*.html,*.m4    set cin et si ts=3 tw=0 wm=0 nowrap
+" "   autocmd! BufRead   *.c,*.cc,*.cpp,*.h,*.html,*.php,*.m4,*.m,*.rb set cindent expandtab tabstop=2 textwidth=0 wrapmargin=0 nowrap autoindent
+"    "autocmd! BufRead   *.html,*.php,*.m4,*.m set cindent expandtab tabstop=2 textwidth=0 wrapmargin=0 nowrap
+"    "autocmd! BufEnter  *.c,*.cc,*.h
+"    "autocmd! BufLeave  *.c,*.cc,*.cpp,*.h,*.html    set nocin noet nosi ts=8 tw= 70 wm=10 wrap
+" "   autocmd! BufRead   *.orc,*.sco,*.mb2    set cin si ts=8 tw=0 wm=0 nowrap
+"    "autocmd! BufLeave  *.orc,*.sco    set nocin nosi ts=8 tw=70 wm=10 wrap
+" "endif " has("autocmd")
+" "highlight comment ctermfg=darkgreen
+" "highlight string ctermfg=darkcyan
+" "highlight constant ctermfg=cyan

@@ -1,0 +1,9 @@
+setl nowrap
+"setl linebreak
+setl nolist
+"setl formatopitons+=l
+"setlocal breakat=\ 
+setl tw=120
+"setl wrapmargin=0
+"set t_Co=256
+"hi clear
