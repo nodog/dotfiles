@@ -11,7 +11,7 @@
 
 dir=~/adm/dotfiles                    # dotfiles directory
 olddir=~/ATTIC/offal/dotfiles_old             # old dotfiles backup directory
-files="bashrc vim"    # list of files/folders to symlink in homedir
+files="bashrc mypromptcolors vim"    # list of files/folders to symlink in homedir
 
 ##########
 
