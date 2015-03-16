@@ -129,6 +129,8 @@ if ( echo $- | grep i ) > /dev/null ; then
          alias be="bundle exec"
 	 alias myMountPERILO="hdiutil attach $HOME/shard/CAVE/loopback/PERILO.dmg -mountpoint $HOME/PERILO"
 	 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+         alias ardu="/Applications/Arduino.app/Contents/MacOS/Arduino --verbose --upload"
+         alias ardv="/Applications/Arduino.app/Contents/MacOS/Arduino --verbose --verify"
 
          export RBENV_ROOT="$HOME/.rbenv"
 
