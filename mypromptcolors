@@ -41,7 +41,7 @@ On_Purple='\e[45m'      # Purple
 On_Cyan='\e[46m'        # Cyan
 On_White='\e[47m'       # White
 
-# High Intensty
+# High Intensity
 IBlack='\e[0;90m'       # Black
 IRed='\e[0;91m'         # Red
 IGreen='\e[0;92m'       # Green
@@ -51,7 +51,7 @@ IPurple='\e[0;95m'      # Purple
 ICyan='\e[0;96m'        # Cyan
 IWhite='\e[0;97m'       # White
 
-# Bold High Intensty
+# Bold High Intensity
 BIBlack='\e[1;90m'      # Black
 BIRed='\e[1;91m'        # Red
 BIGreen='\e[1;92m'      # Green
@@ -61,15 +61,12 @@ BIPurple='\e[1;95m'     # Purple
 BICyan='\e[1;96m'       # Cyan
 BIWhite='\e[1;97m'      # White
 
-# High Intensty backgrounds
+# High Intensity backgrounds
 On_IBlack='\e[0;100m'   # Black
 On_IRed='\e[0;101m'     # Red
 On_IGreen='\e[0;102m'   # Green
 On_IYellow='\e[0;103m'  # Yellow
 On_IBlue='\e[0;104m'    # Blue
-On_IPurple='\e[10;95m'  # Purple
+On_IPurple='\e[0;105m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
-
-# to use:
-# PS1="\[$Blue\]foo\[$Red\] bar\[$Color_Off\] baz : "
