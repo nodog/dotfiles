@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'inkpot'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
 Plugin 'SuperTab'
 Plugin 'bash-support.vim'
 Plugin 'tpope/vim-fugitive'
@@ -87,7 +88,17 @@ colorscheme inkpot
 "              newbie, basing your first .vimrc on this file is a good choice.
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
+"
+"---Syntastic-------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=1
 "------------------------------------------------------------
 " Features {{{1
 "
