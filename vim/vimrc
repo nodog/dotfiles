@@ -17,16 +17,30 @@ Plugin 'scrooloose/syntastic'
 Plugin 'SuperTab'
 Plugin 'bash-support.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Yggdroot/indentLine' 
+Plugin 'Yggdroot/indentLine'
 Plugin 'Puppet-Syntax-Highlighting'
-Plugin 'matchit.zip'
-Plugin 'Tabular'
-Plugin 'kein/ctrlp.vim'
+"Plugin 'matchit.zip'
+"Plugin 'Tabular'
+Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
-"Plugin 'ruby-matchit'
+" tmux
+Plugin 'christoomey/vim-tmux-navigator'
+" for clojure
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/vim-niji'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+" for ruby
+Plugin 'ruby-matchit'
+Plugin 'ntpeters/vim-better-whitespace'
+" because tpope
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+
+"Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Plugin 'tpope/vim-rails.git'
+"Plugin 'guns/vim-clojure-static' - included in Vim 7.38X and above.
 
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -149,8 +163,8 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
+" Highlight searches (use <leader-L> to temporarily turn off highlighting; see the
+" mapping of <leader-L> below)
 set hlsearch
 
 " allows partial searches as typed
@@ -221,11 +235,20 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F10>
 
+" set the map leader to ","
+:let mapleader = ","
+
 " nodog - completion (ctrl-N, ctrl-P)
 " the default (current buffer, other window buffers, buffers in buffer list, 
 " unloaded buffers in bufferlist, tag completion, and included files
 "set complete=.,w,b,u,t,i   
 "set complete=.,w,b,t	    " is derek wyatt's setting
+"
+" movement of splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
 "------------------------------------------------------------
 " statusline
@@ -281,9 +304,9 @@ imap <F1> <nop>
 " which is the default
 " map Y y$
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" Map <leader-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <Leader>l :nohl<CR>:redraw<CR>
 
 " map <F7> to write and make the current file using the makeprg and compiler settings
 nmap <F7> :w<CR>:make<CR>
