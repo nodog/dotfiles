@@ -45,7 +45,7 @@ if ( echo $- | grep i ) > /dev/null ; then
    if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
      . /opt/local/etc/profile.d/bash_completion.sh
    fi
-   
+
    # prompt
    source $HOME/.mypromptcolors
    MYPS1LEFT="\n\h:${IBlue?}\w${Color_Off?} "
@@ -53,7 +53,7 @@ if ( echo $- | grep i ) > /dev/null ; then
    # color on the second line is causing character erasing problems :(
    #MYPS1NEXT="\n${White?}>${Color_Off?} "
    MYPS1NEXT="\n$ "
-   MYPS1RIGHT="" 
+   MYPS1RIGHT=""
    if [ -f /opt/local/share/git/contrib/completion/git-prompt.sh ]; then
      . /opt/local/share/git/contrib/completion/git-prompt.sh
      MYPS1RIGHT=${White?}'$(__git_ps1 "(%s)")'${Color_Off?}${MYPS1RIGHT?}
@@ -84,7 +84,7 @@ if ( echo $- | grep i ) > /dev/null ; then
    alias ls="ls -FNv --dereference-command-line-symlink-to-dir --color=auto -T 0 --time-style=long-iso"
    alias mySuggestMusic="( cd $HOME/PERILO/music; find . -mindepth 2 -maxdepth 2 ) | unsort 2>/dev/null | head -20"
    alias rspec="rspec --color"
-   
+
    # history control
    shopt -s histappend                   # append to the history file instead of rewriting it
    export HISTFILESIZE=100000            # number of size file to store
@@ -96,17 +96,17 @@ if ( echo $- | grep i ) > /dev/null ; then
    export PROMPT_COMMAND='history -a'    # store stuff immediately
 
    # keychains -- add in selection of id_rsa or id_dsa depending on existence
-#   keychain -q $HOME/.ssh/id_rsa 
+#   keychain -q $HOME/.ssh/id_rsa
 #      [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && \
 #         source $HOME/.keychain/$HOSTNAME-sh
 #      [[ -f $HOME/.keychain/$HOSTNAME-sh-gpg ]] && \
 #         source $HOME/.keychain/$HOSTNAME-sh-gpg
-   
+
    # machine specific commands
    case ${HOSTNAME/.*/} in
       brebis|cheddar)
-         if ! [ -f $HOME/.myRsync-talkingbone-main ]; then 
-	   #echo Cet ordinateur n\'a PAS ta vérité. 
+         if ! [ -f $HOME/.myRsync-talkingbone-main ]; then
+	   #echo Cet ordinateur n\'a PAS ta vérité.
 	   echo Esta computadora no contiene su verdad.
 	 fi
          # Terminal colours (after installing GNU coreutils)
@@ -131,7 +131,9 @@ if ( echo $- | grep i ) > /dev/null ; then
 	 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
          alias ardu="/Applications/Arduino.app/Contents/MacOS/Arduino --verbose --upload"
          alias ardv="/Applications/Arduino.app/Contents/MacOS/Arduino --verbose --verify"
-
+         alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper start';
+         alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper stop';
+         alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper restart';
          export RBENV_ROOT="$HOME/.rbenv"
 
          if [ -d $RBENV_ROOT ]; then
