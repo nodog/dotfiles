@@ -121,7 +121,9 @@ let g:syntastic_enable_signs=1
 "---Airline-------------------------------------------------------
 let g:airline_powerline_fonts=1
 let g:airline_theme='ubaryd'
+let g:airline#extensions#whitespace#enabled=0
 
+"
 "------------------------------------------------------------
 " Features {{{1
 "
@@ -139,6 +141,9 @@ let g:airline_theme='ubaryd'
 
 " Enable syntax highlighting
 syntax on
+
+"---BetterWhiteSpace----------------------------------------------
+:highlight ExtraWhitespace ctermbg=brown
 
 "------------------------------------------------------------
 " Must have options {{{1
@@ -319,6 +324,7 @@ imap <F1> <nop>
 " Map <leader-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <Leader>l :nohl<CR>:redraw<CR>
+nnoremap <Leader>t :%s/\s\+$<CR>
 
 " map <F7> to write and make the current file using the makeprg and compiler settings
 nmap <F7> :w<CR>:make<CR>
