@@ -9,8 +9,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-Plugin 'inkpot'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
@@ -88,13 +88,17 @@ filetype plugin indent on    " required
 " to ~/.vim/vimrc.
 
 "---colorschemes------------
-set t_Co=256
+"set t_Co=256
 " this is necessary so that the CSApprox plugin can run (and the
 " colorscheme is installed in ~/.vim/colors
 "colorscheme candycode
-colorscheme inkpot
+"colorscheme distinguished
+"let g:solarized_termcolors=256
+"colorscheme solarized 
+"set background=dark
+"colorscheme inkpot
 "colorscheme matrix
-"colorscheme vividchalk
+colorscheme vividchalk
 "colorscheme dw_orange
 "colorscheme anotherdark
 "colorscheme asu1dark
@@ -143,7 +147,7 @@ let g:airline#extensions#whitespace#enabled=0
 syntax on
 
 "---BetterWhiteSpace----------------------------------------------
-:highlight ExtraWhitespace ctermbg=brown
+":highlight ExtraWhitespace ctermbg=brown
 
 "------------------------------------------------------------
 " Must have options {{{1
