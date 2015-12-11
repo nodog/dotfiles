@@ -1,0 +1,4 @@
+pane	0	1	:vim	1	:*	1	:/Users/anderson/Google Drive/dock/notes	1	vim	:vim TODO.uxt
+pane	0	1	:vim	1	:*	2	:/Users/anderson	0	bash	:
+window	0	1	1	:*	f836,238x62,0,0{119x62,0,0,1,118x62,120,0,2}
+state	0	

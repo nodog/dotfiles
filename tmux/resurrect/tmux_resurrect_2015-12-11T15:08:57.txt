@@ -1,0 +1,7 @@
+pane	0	1	:bash	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:bash	1	:*	2	:	1	bash	:sudo port selfupdate
+pane	0	2	:code-manager	0	:-	1	:/Users/anderson/puppet/src/code-manager/src/puppetlabs/code_manager	0	vim	:view deploys.clj
+pane	0	2	:code-manager	0	:-	2	:/Users/anderson/puppet/src/code-manager	1	bash	:
+window	0	1	1	:*	e53d,204x51,0,0{102x51,0,0,1,101x51,103,0,2}
+window	0	2	0	:-	e540,204x51,0,0{102x51,0,0,3,101x51,103,0,4}
+state	0	

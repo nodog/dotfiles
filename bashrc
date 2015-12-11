@@ -16,7 +16,8 @@ fi
 
 # I'd like to add some directories to my path if they exist and aren't there already
 myAddToPath="/usr/local/sbin /opt/local/bin /opt/local/sbin \
-   /opt/local/libexec/gnubin/ /usr/local/processing $HOME/bin /sbin /usr/sbin"
+   /opt/local/libexec/gnubin/ /usr/local/processing $HOME/bin /sbin /usr/sbin \
+   /opt/local/lib/postgresql94/bin"
 for myDir in $myAddToPath; do
    if [ -d $myDir ] && echo $PATH | grep -v $myDir > /dev/null; then
       export PATH=$myDir:$PATH
@@ -34,16 +35,12 @@ done
 # interactive shell
 if ( echo $- | grep i ) > /dev/null ; then
 
-   # enable bash completion in interactive shells
-   # if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-   #    . /etc/bash_completion
-   # fi
-   # if [ -f /opt/local/etc/bash_completion ]; then
-   #    . /opt/local/etc/bash_completion
-   #    echo "bash completion loaded"
-   # fi
+   # enable completion in interactive shells
    if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
      . /opt/local/etc/profile.d/bash_completion.sh
+   fi
+   if [ -f /opt/local/share/git/contrib/completion/git-completion.bash ]; then
+     . /opt/local/share/git/contrib/completion/git-completion.bash
    fi
 
    # prompt
@@ -104,7 +101,7 @@ if ( echo $- | grep i ) > /dev/null ; then
 
    # machine specific commands
    case ${HOSTNAME/.*/} in
-      brebis|cheddar)
+      brebis|cheddar|roquefort)
          if ! [ -f $HOME/.myRsync-talkingbone-main ]; then
 	   #echo Cet ordinateur n\'a PAS ta vérité.
 	   echo Esta computadora no contiene su verdad.
@@ -131,10 +128,10 @@ if ( echo $- | grep i ) > /dev/null ; then
 	 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
          alias ardu="/Applications/Arduino.app/Contents/MacOS/Arduino --verbose --upload"
          alias ardv="/Applications/Arduino.app/Contents/MacOS/Arduino --verbose --verify"
-         alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper start';
-         alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper stop';
-         alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper restart';
-         alias postgres_status='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql92-server/postgresql92-server.wrapper status';
+         alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql94-server/postgresql94-server.wrapper start';
+         alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql94-server/postgresql94-server.wrapper stop';
+         alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql94-server/postgresql94-server.wrapper restart';
+         alias postgres_status='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql94-server/postgresql94-server.wrapper status';
          export RBENV_ROOT="$HOME/.rbenv"
 
          if [ -d $RBENV_ROOT ]; then

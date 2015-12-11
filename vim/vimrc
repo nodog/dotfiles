@@ -11,6 +11,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'jyota/vimColors'
+"Plugin 'blueshirts/darcula'
+"Plugin 'DrowsySaturn/VIvid.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
@@ -29,8 +32,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fireplace'
 Plugin 'vim-scripts/vim-niji'
 Plugin 'guns/vim-clojure-highlight'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+"Plugin 'guns/vim-sexp'
+"Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 " for hocon
 Plugin 'GEverding/vim-hocon'
 " for ruby
@@ -40,8 +43,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
-
+"Plugin 'bling/vim-bufferline'
+Plugin 'Buffergator'
 
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'Lokaltog/vim-easymotion'
@@ -83,7 +86,7 @@ filetype plugin indent on    " required
 " 2013-12-26
 "
 " vimrc
-" is the run commands file for vim. 
+" is the run commands file for vim.
 " I'm installing mine in ~/.vim/nodogvimrc/vimrc and then linking that
 " to ~/.vim/vimrc.
 
@@ -94,14 +97,17 @@ filetype plugin indent on    " required
 "colorscheme candycode
 "colorscheme distinguished
 "let g:solarized_termcolors=256
-"colorscheme solarized 
+"colorscheme solarized
 "set background=dark
-"colorscheme inkpot
+colorscheme inkpot
+"colorscheme 256-grayvim
 "colorscheme matrix
-colorscheme vividchalk
+"colorscheme vividchalk
 "colorscheme dw_orange
 "colorscheme anotherdark
 "colorscheme asu1dark
+"colorscheme scooby
+"colorscheme neverland
 " as is this parameter
 " and it seems to be necessary to change to reporting xterm-color256 in iterm2
 
@@ -124,8 +130,13 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
 "---Airline-------------------------------------------------------
 let g:airline_powerline_fonts=1
-let g:airline_theme='ubaryd'
+"let g:airline_theme='ubaryd'
 let g:airline#extensions#whitespace#enabled=0
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+"
+" " Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 "
 "------------------------------------------------------------
@@ -257,9 +268,9 @@ set pastetoggle=<F10>
 :let mapleader = ","
 
 " nodog - completion (ctrl-N, ctrl-P)
-" the default (current buffer, other window buffers, buffers in buffer list, 
+" the default (current buffer, other window buffers, buffers in buffer list,
 " unloaded buffers in bufferlist, tag completion, and included files
-"set complete=.,w,b,u,t,i   
+"set complete=.,w,b,u,t,i
 "set complete=.,w,b,t	    " is derek wyatt's setting
 "
 " movement of splits
@@ -321,6 +332,12 @@ set expandtab
 nmap <F1> <nop>
 imap <F1> <nop>
 
+map <F2> :mksession! ~/.vim_session <cr>
+map <F3> :source ~/.vim_session <cr>
+
+map <F4> qaq:1,$ g/000/y A <cr>
+
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 " map Y y$
@@ -345,7 +362,7 @@ nmap <F1> :NERDTreeToggle<CR>
 "cmap w!! w !sudo tee >/dev/null %
 
 "------------------------------------------------------------
-" Filetypes 
+" Filetypes
 " filetype on         "default
 " filetype indent on  "default
 " filetype plugin on  "default
@@ -372,7 +389,7 @@ let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,
 " for warking with the clipboard on os x
 set clipboard=unnamed
 
-let g:indentLine_char='·' 
+let g:indentLine_char='·'
 
 "---unsectioned previous vimrc-----------------------
 " Things with "above in front are set above this line.
@@ -395,7 +412,7 @@ let g:indentLine_char='·'
 " "above set number
 " filetype on
 " filetype indent on
-" filetype plugin on 
+" filetype plugin on
 " set guifont=Monaco:h16
 " "above set ignorecase
 " "above set laststatus=2
@@ -416,14 +433,14 @@ let g:indentLine_char='·'
 " "set wildmode=list
 " set wrap
 " "set wrapmargin=10
-" 
+"
 " " F1 is taken
 " " F2 starts another chuck shred with the current file
 " "map <F2> :w:!chuck + %
 " " F4 checks the chuck status
 " "map <F4> :!chuck --status
 " " F5 reformats the line
-" map <F5> gq} 
+" map <F5> gq}
 " " F7 removes .wav from the screen and replaces _ and - with space
 " "map <F7> :%s/\(\.wav\\|\.ogg\\|\.mp3\\|\.MP3\\|\.flac\)//g:%s/[_,-]/ /g
 " " F8 changes to the Esperanto keymap
@@ -436,14 +453,14 @@ let g:indentLine_char='·'
 " "map <F11> :w:!latex dissertation.tex
 " " F12 xdvi's preproposal
 " "map <F12> :w:!xdvi ResearchProposal.dvi &
-" 
+"
 " "colors
 " if &t_Co > 1
 "    if has("syntax")
 "       syntax on
 "    endif
 " endif
-" 
+"
 " " Only do this part when compiled with support for autocommands.
 " "if has("autocmd")
 " "   autocmd! BufReadPost * "removes the stupid jump-to-last-position
