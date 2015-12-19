@@ -345,7 +345,7 @@ map <F4> qaq:1,$ g/000/y A <cr>
 " Map <leader-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <Leader>l :nohl<CR>:redraw<CR>
-nnoremap <Leader>t :%s/\s\+$<CR>
+nnoremap <Leader>r mr:%s/\s\+$<CR>'r
 
 " map <F7> to write and make the current file using the makeprg and compiler settings
 nmap <F7> :w<CR>:make<CR>

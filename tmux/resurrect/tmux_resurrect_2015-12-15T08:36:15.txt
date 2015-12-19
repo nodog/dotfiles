@@ -1,0 +1,14 @@
+pane	0	1	:notes	0	:-	1	:/Users/anderson/Google Drive/dock/notes	1	vim	:vim TODO.uxt
+pane	0	1	:notes	0	:-	2	:/Users/anderson/Google Drive/dock/notes	0	bash	:
+pane	0	2	:code-manager	1	:*	1	:/Users/anderson/puppet/src/code-manager/src/puppetlabs/code_manager	1	vim	:vim migrations/20151026163700-initial.up.sql
+pane	0	2	:code-manager	1	:*	2	:/Users/anderson/puppet/src/code-manager	0	bash	:bash /Users/anderson/bin/lein repl
+pane	0	2	:code-manager	1	:*	3	:/Users/anderson/puppet/src/code-manager/src	0	bash	:
+pane	0	3	:psql	0	:	1	:/Users/anderson/puppet/src/forge-api/src/puppetlabs/forge_api/storage	1	vim	:view core.clj
+pane	0	4	:psql	0	:	1	:	1	bash	:sudo -u postgres psql94
+pane	0	5	:pl-p_e	0	:	1	:/Users/anderson/puppet/src/puppetlabs-puppet_enterprise/manifests/master	1	vim	:view code_manager.pp
+window	0	1	0	:-	6e96,272x61,0,0{136x61,0,0,1,135x61,137,0,2}
+window	0	2	1	:*	dbfc,272x61,0,0{136x61,0,0,3,135x61,137,0[135x29,137,0,6,135x31,137,30,4]}
+window	0	3	0	:	b564,272x61,0,0,7
+window	0	4	0	:	b565,272x61,0,0,8
+window	0	5	0	:	b566,272x61,0,0,9
+state	0	

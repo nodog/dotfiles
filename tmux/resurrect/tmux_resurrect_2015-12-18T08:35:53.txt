@@ -1,0 +1,12 @@
+pane	0	1	:notes	0	:-	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:notes	0	:-	2	:/Users/anderson/Google Drive/dock/notes	1	bash	:
+pane	0	2	:code-manager	0	:	1	:/Users/anderson/puppet/src/code-manager/docs	1	bash	:
+pane	0	2	:code-manager	0	:	2	:/Users/anderson/puppet/src/code-manager	0	bash	:
+pane	0	2	:code-manager	0	:	3	:/Users/anderson/puppet/src/code-manager/src	0	bash	:
+pane	0	3	:r10k	1	:*	1	:/Users/anderson/puppet/src/r10k/lib/r10k	1	vim	:vim api.rb
+pane	0	3	:r10k	1	:*	2	:/Users/anderson/puppet/src/r10k/lib/r10k	0	bash	:
+pane	0	3	:r10k	1	:*	3	:/Users/anderson	0	ruby	:pry 
+window	0	1	0	:-	b2ae,202x51,0,0{103x51,0,0,1,98x51,104,0,2}
+window	0	2	0	:	4695,202x51,0,0{90x51,0,0,3,111x51,91,0[111x22,91,0,4,111x28,91,23,5]}
+window	0	3	1	:*	ca28,202x51,0,0{112x51,0,0,6,43x51,113,0,7,45x51,157,0,8}
+state	0	

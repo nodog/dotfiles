@@ -1,0 +1,8 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/puppet/src/code-manager	1	bash	:
+pane	0	2	:code-manager	0	:-	1	:/Users/anderson/puppet/src/code-manager/docs	1	bash	:
+pane	0	2	:code-manager	0	:-	2	:/Users/anderson/puppet/src/code-manager	0	bash	:bash /Users/anderson/bin/lein repl
+pane	0	2	:code-manager	0	:-	3	:/Users/anderson/puppet/src/code-manager/src	0	bash	:
+window	0	1	1	:*	fe97,364x83,0,0{171x83,0,0,1,192x83,172,0,2}
+window	0	2	0	:-	9a53,364x83,0,0{171x83,0,0,3,192x83,172,0[192x38,172,0,6,192x44,172,39,4]}
+state	0	
