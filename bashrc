@@ -87,7 +87,7 @@ if ( echo $- | grep i ) > /dev/null ; then
    export HISTFILESIZE=100000            # number of size file to store
    export HISTSIZE=100000                # number ol lines to store
    export HISTCONTROL=ignoreboth         # ignore commands starting with spaces and dups
-   export HISTIGNORE='ls:bg:fg:history'  # ignore these commands
+   export HISTIGNORE='bg:fg:history'  # ignore these commands
    export HISTTIMEFORMAT='%F %T '        # add date and time
    shopt -s cmdhist                      # one command per line, even if entered on separate lines
    export PROMPT_COMMAND='history -a'    # store stuff immediately
@@ -137,7 +137,6 @@ if ( echo $- | grep i ) > /dev/null ; then
          if [ -d $RBENV_ROOT ]; then
              export PATH="$RBENV_ROOT/bin:$PATH"
              eval "$(rbenv init -)" 2>&-
-             . /opt/local/etc/bash_completion.d/rbenv
          fi
 
          if [ -d $HOME/down/z ]; then
@@ -181,3 +180,12 @@ if ( echo $- | grep i ) > /dev/null ; then
 #   alias barrer=lock
 
 fi
+
+##
+# Your previous /Users/anderson/.profile file was backed up as /Users/anderson/.profile.macports-saved_2016-01-28_at_11:00:10
+##
+
+# MacPorts Installer addition on 2016-01-28_at_11:00:10: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

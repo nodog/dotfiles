@@ -1,8 +1,0 @@
-pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
-pane	0	1	:notes	1	:*	2	:/Users/anderson/Google Drive/dock/notes	1	myMalicoGrep	:myMalicoGrep egence
-pane	0	2	:code-manager	0	:-	1	:/Users/anderson/puppet/src/code-manager/docs	1	bash	:
-pane	0	2	:code-manager	0	:-	2	:/Users/anderson/puppet/src/code-manager	0	bash	:
-pane	0	2	:code-manager	0	:-	3	:/Users/anderson/puppet/src/code-manager/src	0	bash	:
-window	0	1	1	:*	03f7,272x62,0,0{138x62,0,0,1,133x62,139,0,2}
-window	0	2	0	:-	fa70,272x62,0,0{125x62,0,0,3,146x62,126,0[146x28,126,0,4,146x33,126,29,5]}
-state	0	

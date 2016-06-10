@@ -24,6 +24,7 @@ TERM xterm-color
 TERM xterm-debian
 TERM rxvt
 TERM screen
+TERM screen-256color
 TERM screen-w
 TERM vt100
 

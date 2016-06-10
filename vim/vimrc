@@ -45,6 +45,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 "Plugin 'bling/vim-bufferline'
 Plugin 'Buffergator'
+Plugin 'vim-json-bundle'
 
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'Lokaltog/vim-easymotion'
@@ -158,7 +159,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 syntax on
 
 "---BetterWhiteSpace----------------------------------------------
-":highlight ExtraWhitespace ctermbg=brown
+:highlight ExtraWhitespace ctermbg=brown
 
 "------------------------------------------------------------
 " Must have options {{{1
@@ -264,6 +265,10 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F10>
 
+" This is apparently for not concealing json quotes on strings
+"set conceallevel=0
+let g:vim_json_syntax_conceal = 0
+
 " set the map leader to ","
 :let mapleader = ","
 
@@ -281,6 +286,12 @@ nnoremap <C-L> <C-W><C-L>
 
 " DiffOrig
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 "------------------------------------------------------------
 " statusline
@@ -345,7 +356,7 @@ map <F4> qaq:1,$ g/000/y A <cr>
 " Map <leader-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <Leader>l :nohl<CR>:redraw<CR>
-nnoremap <Leader>r mr:%s/\s\+$<CR>'r
+nnoremap <Leader>r :StripWhitespace<CR>
 
 " map <F7> to write and make the current file using the makeprg and compiler settings
 nmap <F7> :w<CR>:make<CR>
