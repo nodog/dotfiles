@@ -149,6 +149,12 @@ if ( echo $- | grep i ) > /dev/null ; then
       *)
    esac
 
+   #roquefort only
+   if [ "${HOSTNAME/.*/}" = "roquefort" ]; then
+     export CPPFLAGS="-std=c++11 -stdlib=libc++"
+   fi
+
+
 #   # For different spoken languages
 #
 #   #esperanto
@@ -180,12 +186,3 @@ if ( echo $- | grep i ) > /dev/null ; then
 #   alias barrer=lock
 
 fi
-
-##
-# Your previous /Users/anderson/.profile file was backed up as /Users/anderson/.profile.macports-saved_2016-01-28_at_11:00:10
-##
-
-# MacPorts Installer addition on 2016-01-28_at_11:00:10: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-

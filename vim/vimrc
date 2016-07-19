@@ -129,6 +129,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_check_header = 0
+let g:syntastic_cpp_check_header = 0
+let g:syntastic_cpp_include_dirs = ['../../include','../../inc','../include','../inc','include','inc','lib/inc','/usr/include','/usr/local/include','/opt/local/include']
 "---Airline-------------------------------------------------------
 let g:airline_powerline_fonts=1
 "let g:airline_theme='ubaryd'
@@ -324,8 +329,8 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=2
-set softtabstop=2
+"set shiftwidth=2
+"set softtabstop=2
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
