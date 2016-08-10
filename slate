@@ -19,7 +19,8 @@ config orderScreensLeftToRight true
 
 # UP ---
 # move and resize to full vert, 75% vert @ top, 50% vert @ top
-bind up:ctrl;cmd     chain move windowTopLeftX;0 windowSizeX;screenSizeY*0.98 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.74 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.49
+#bind up:ctrl;cmd     chain move windowTopLeftX;0 windowSizeX;screenSizeY*0.98 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.74 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.49
+bind up:ctrl;cmd     chain move windowTopLeftX;0 screenSizeX;screenSizeY*0.98 | move windowTopLeftX;0 screenSizeX;screenSizeY*0.74 | move windowTopLeftX;0 screenSizeX;screenSizeY*0.49
 # move and resize to full vert, 75% vert @ top, 50% vert @ top, 25% vert @ top, 50% vert @ middle
 #bind up:ctrl;cmd     chain move windowTopLeftX;0 windowSizeX;screenSizeY*0.98 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.74 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.49 | move windowTopLeftX;0 windowSizeX;screenSizeY*0.24 | move windowTopLeftX;screenSizeY*0.25 windowSizeX;screenSizeY*0.49
 # move and resize to half top
@@ -27,18 +28,18 @@ bind up:ctrl;cmd     chain move windowTopLeftX;0 windowSizeX;screenSizeY*0.98 | 
 
 # DOWN ---
 # move to next screen full
-bind down:ctrl;cmd   throw next resize
+bind down:ctrl;cmd   throw next resize:screenSizeX;screenSizeY*0.98
 #bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
 #bind left:ctrl;cmd   corner top-left resize:screenSizeX;screenSizeY*0.49
 
 # LEFT ---
 # move and resize to left half, right half
-bind left:ctrl;cmd   chain   move 0;0 screenSizeX*0.49;screenSizeY*0.98 | move screenSizeX*0.51;0 screenSizeX*0.49;screenSizeY*0.98 | move 0;0 screenSizeX*0.75;screenSizeY*0.98 | move screenSizeX*0.25;0 screenSizeX*0.75;screenSizeY*0.98 
+bind left:ctrl;cmd   chain   move 0;0 screenSizeX*0.49;screenSizeY*0.98 | move 0;0 screenSizeX*0.75;screenSizeY*0.98 | move 0;0 screenSizeX;screenSizeY*0.98 
 #bind left:ctrl;cmd   chain   move 0;0 screenSizeX*0.49;screenSizeY*0.98 | move 0;0 screenSizeX*0.75;screenSizeY*0.98 | move 0;0 screenSizeX;screenSizeY*0.98
 
 # RIGHT ---
 # full screen, move to 75% right side, move to 50% right half
-bind right:ctrl;cmd   chain    move 0;0 screenSizeX;screenSizeY*0.98 | move screenSizeX*0.25;0 screenSizeX*0.75;screenSizeY*0.98 | move screenSizeX*0.51;0 screenSizeX*0.49;screenSizeY*0.98
+bind right:ctrl;cmd   chain    move screenSizeX*0.25;0 screenSizeX*0.75;screenSizeY*0.98 | move screenSizeX*0.51;0 screenSizeX*0.49;screenSizeY*0.98 | move 0;0 screenSizeX;screenSizeY*0.98
 #bind right:ctrl;cmd  chain   move 0;screenSizeY*0.5 screenSizeX;screenSizeY*0.49
 #bind right:ctrl;cmd  chain   move 0;screenSizeY*0.5 screenSizeX;screenSizeY*0.49
 

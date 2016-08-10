@@ -1,0 +1,23 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/Google Drive/dock/notes	1	bash	:
+pane	0	1	:notes	1	:*	3	:/Users/anderson/ATTIC/down/00-incoming/music/Santaolalla,_Gustavo/2014-The_Last_of_Us-Left_Behind	0	bash	:
+pane	0	2	:puppet-code	0	:	1	:/Users/anderson/puppet/src/puppet-code	1	bash	:
+pane	0	2	:puppet-code	0	:	2	:/Users/anderson/puppet/src/puppet-code	0	bash	:
+pane	0	3	:puppet-access	0	:	1	:/Users/anderson/puppet/src/puppet-access	1	bash	:
+pane	0	3	:puppet-access	0	:	2	:/Users/anderson/puppet/src/puppet-access/build	0	bash	:
+pane	0	4	:leatherman	0	:	1	:/Users/anderson/puppet/src/leatherman/windows/src	1	vim	:view file_util.cc
+pane	0	4	:leatherman	0	:	2	:/Users/anderson/puppet/src/leatherman	0	bash	:
+pane	0	5	:learnin	0	:	1	:/Users/anderson/puppet/src/learnin/cpp/hello_world	0	vim	:view hello_world.cpp
+pane	0	5	:learnin	0	:	2	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	vim	:vim zimmer.cpp
+pane	0	5	:learnin	0	:	3	:/Users/anderson/puppet/src/learnin/cpp/hello_world	1	bash	:bash
+pane	0	5	:learnin	0	:	4	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	bash	:
+pane	0	6	:pe-license	0	:	1	:/Users/anderson/puppet/src/pe-client-tools-vanagon	1	bash	:
+pane	0	7	:vim	0	:-	1	:/Users/anderson/puppet/src/vanagon/bin	1	vim	:view devkit
+window	0	1	1	:*	5b5b,272x61,0,0{135x61,0,0,1,136x61,136,0[136x52,136,0,59,136x8,136,53,61]}
+window	0	2	0	:	1b6d,272x61,0,0{135x61,0,0,25,136x61,136,0,24}
+window	0	3	0	:	87da,272x61,0,0{149x61,0,0,28,122x61,150,0,43}
+window	0	4	0	:	4ac1,272x61,0,0{150x61,0,0,29,121x61,151,0,30}
+window	0	5	0	:	9d6c,271x61,0,0[272x31,0,0{135x31,0,0,31,136x31,136,0,56},272x29,0,32{135x29,0,32,32,136x29,136,32,57}]
+window	0	6	0	:	5ae6,272x61,0,0,55
+window	0	7	0	:-	dae3,272x61,0,0,62
+state	0	

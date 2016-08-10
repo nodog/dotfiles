@@ -1,0 +1,26 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	1	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/Google Drive/dock/notes	0	bash	:
+pane	0	1	:notes	1	:*	3	:/Users/anderson/ATTIC/down/00-incoming/music/Santaolalla,_Gustavo	0	bash	:
+pane	0	2	:puppet-code	0	:	1	:/Users/anderson/puppet/src/puppet-code	1	vim	:view exe/puppet-code.cc
+pane	0	2	:puppet-code	0	:	2	:/Users/anderson/puppet/src/puppet-code	0	bash	:
+pane	0	3	:puppet-access	0	:-	1	:/Users/anderson/puppet/src/puppet-access	1	bash	:
+pane	0	3	:puppet-access	0	:-	2	:/Users/anderson/puppet/src/puppet-access	0	bash	:
+pane	0	4	:leatherman	0	:	1	:/Users/anderson/puppet/src/leatherman/windows/src	1	bash	:
+pane	0	4	:leatherman	0	:	2	:/Users/anderson/puppet/src/leatherman	0	bash	:
+pane	0	5	:learnin	0	:	1	:/Users/anderson/puppet/src/learnin/cpp/music_day	0	vim	:vim music_day.cpp
+pane	0	5	:learnin	0	:	2	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	vim	:vim zimmer.cpp
+pane	0	5	:learnin	0	:	3	:/Users/anderson/puppet/src/learnin/cpp/music_day	1	bash	:
+pane	0	5	:learnin	0	:	4	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	bash	:
+pane	0	6	:pe-license	0	:	1	:/Users/anderson/puppet/src/pe-client-tools-vanagon	1	bash	:
+pane	0	7	:vanagon	0	:	1	:/Users/anderson/puppet/src/vanagon/bin	1	bash	:
+pane	0	8	:r10k	0	:	1	:/Users/anderson/puppet/src/r10k/lib/r10k	0	vim	:view puppetfile.rb
+pane	0	8	:r10k	0	:	2	:/Users/anderson/puppet/src/r10k	1	bash	:
+window	0	1	1	:*	e441,364x82,0,0{181x82,0,0,1,182x82,182,0[182x59,182,0,2,182x22,182,60,3]}
+window	0	2	0	:	fe53,364x82,0,0{181x82,0,0,4,182x82,182,0,5}
+window	0	3	0	:-	0aff,364x82,0,0{173x82,0,0,6,190x82,174,0,7}
+window	0	4	0	:	2d5a,364x82,0,0{196x82,0,0,8,167x82,197,0,9}
+window	0	5	0	:	dbd2,364x82,0,0[365x42,0,0{182x42,0,0,10,182x42,183,0,11},365x39,0,43{182x39,0,43,12,182x39,183,43,13}]
+window	0	6	0	:	5f53,364x82,0,0,14
+window	0	7	0	:	5f54,364x82,0,0,15
+window	0	8	0	:	e2ca,364x82,0,0{182x82,0,0,16,181x82,183,0,17}
+state	0	

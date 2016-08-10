@@ -1,0 +1,26 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/Google Drive/dock/notes	0	bash	:
+pane	0	1	:notes	1	:*	3	:/Users/anderson/ATTIC/down/00-incoming/music/Santaolalla,_Gustavo	1	mplayer	:mplayer 2013-The_Last_of_Us/01-The_Quarantine_Zone_(20_Years_Later).mp3 2013-The_Last_of_Us/02-The_Hour.mp3 2013-The_Last_of_Us/03-The_Last_of_Us.mp3 2013-The_Last_of_Us/04-Forgotten_Memories.mp3 2013-The_Last_of_Us/05-The_Outbreak.mp3 2013-The_Last_of_Us/06-Vanishing_Grace.mp3 2013-The_Last_of_Us/07-The_Hunters.mp3 2013-The_Last_of_Us/08-All_Gone.mp3 2013-The_Last_of_Us/09-Vanishing_Grace_(Innocence).mp3 2013-The_Last_of_Us/10-By_Any_Means.mp3 2013-The_Last_of_Us/11-The_Choice.mp3 2013-The_Last_of_Us/12-Smugglers.mp3 2013-The_Last_of_Us/13-The_Last_of_Us_(Never_Again).mp3 2013-The_Last_of_Us/14-The_Last_of_Us_(Goodnight).mp3 2013-The_Last_of_Us/15-I_Know_What_You_Are.mp3 2013-The_Last_of_Us/16-Home.mp3 2013-The_Last_of_Us/17-Infected.mp3 2013-The_Last_of_Us/18-All_Gone_(Aftermath).mp3 2013-The_Last_of_Us/19-The_Last_of_Us_(A_New_Dawn).mp3 2013-The_Last_of_Us/20-All_Gone_(No_Escape).mp3 2013-The_Last_of_Us/21-Vanishing_Grace_(Childhood).mp3 2013-The_Last_of_Us/22-The_Path.mp3 2013-The_Last_of_Us/23-All_Gone_(Alone).mp3 2013-The_Last_of_Us/24-Blackout.mp3 2013-The_Last_of_Us/25-The_Way_It_Was.mp3 2013-The_Last_of_Us/26-Breathless.mp3 2013-The_Last_of_Us/27-The_Last_of_Us_(You_and_Me).mp3 2013-The_Last_of_Us/28-All_Gone_(The_Outside).mp3 2013-The_Last_of_Us/29-The_Path_(A_New_Beginning).mp3 2013-The_Last_of_Us/30-Returning.mp3 2014-The_Last_of_Us-Left_Behind/01-Gustavo_Santaolalla-Fleeting.mp3 2014-The_Last_of_Us-Left_Behind/02-Gustavo_Santaolalla-All_Gone_(Seasons).mp3 2014-The_Last_of_Us-Left_Behind/03-Andrew_Buresh-Evasion.mp3 2014-The_Last_of_Us-Left_Behind/04-Gustavo_Santaolalla-All_Gone_(Partners).mp3 2014-The_Last_of_Us-Left_Behind/05-JD_Mayer-Cause_and_Effect.mp3 2014-The_Last_of_Us-Left_Behind/06-Gustavo_Santaolalla-All_Gone_(Reunion).mp3 2014-The_Last_of_Us-Left_Behind/07-Gustavo_Santaolalla-Stalking.mp3 2014-The_Last_of_Us-Left_Behind/08-Gustavo_Santaolalla-Left_Behind_(Together).mp3 2014-The_Last_of_Us-Left_Behind/09-Anthony_Caruso-The_Capitol.mp3 2014-The_Last_of_Us-Left_Behind/10-Gustavo_Santaolalla-Head_Rush.mp3 2014-The_Last_of_Us-Left_Behind/11-Gustavo_Santaolalla-Wandering.mp3 2014-The_Last_of_Us-Left_Behind/12-Gustavo_Santaolalla-All_Gone_(Overcome).mp3 2014-The_Last_of_Us-Left_Behind/13-Gustavo_Santaolalla-Unstable.mp3 2014-The_Last_of_Us-Left_Behind/14-Gustavo_Santaolalla-The_Last_of_Us_(Astray).mp3 2014-The_Last_of_Us-Left_Behind/15-JD_Mayer-Answers.mp3 2014-The_Last_of_Us-Left_Behind/16-Gustavo_Santaolalla-Drawn_In.mp3 2014-The_Last_of_Us-Left_Behind/17-JD_Mayer-Apprehension.mp3 2014-The_Last_of_Us-Left_Behind/18-Gustavo_Santaolalla-The_Path_(Vacant).mp3 2014-The_Last_of_Us-Left_Behind/19-JD_Mayer-Convergence.mp3 2014-The_Last_of_Us-Left_Behind/20-Gustavo_Santaolalla-Shadows.mp3 2014-The_Last_of_Us-Left_Behind/21-Gustavo_Santaolalla-No_Mercy.mp3 2014-The_Last_of_Us-Left_Behind/22-Gustavo_Santaolalla-Fleeting_(Affection).mp3 2014-The_Last_of_Us-Left_Behind/23-Andrew_Buresh-Extinction.mp3 2014-The_Last_of_Us-Left_Behind/24-Anthony_Caruso_&_JD_Mayer-Consumed.mp3 2014-The_Last_of_Us-Left_Behind/25-Gustavo_Santaolalla-Left_Behind.mp3
+pane	0	2	:puppet-code	0	:	1	:/Users/anderson/puppet/src/puppet-code	1	vim	:view exe/puppet-code.cc
+pane	0	2	:puppet-code	0	:	2	:/Users/anderson/puppet/src/puppet-code	0	bash	:
+pane	0	3	:puppet-access	0	:	1	:/Users/anderson/puppet/src/puppet-access/build	1	bash	:
+pane	0	3	:puppet-access	0	:	2	:/Users/anderson/puppet/src/puppet-access	0	vim	:vim exe/puppet-access.cc
+pane	0	4	:leatherman	0	:	1	:/Users/anderson/puppet/src/leatherman/windows/src	1	bash	:
+pane	0	4	:leatherman	0	:	2	:/Users/anderson/puppet/src/leatherman	0	bash	:
+pane	0	5	:learnin	0	:	1	:/Users/anderson/puppet/src/learnin/cpp/music_day	0	vim	:vim music_day.cpp
+pane	0	5	:learnin	0	:	2	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	vim	:vim zimmer.cpp
+pane	0	5	:learnin	0	:	3	:/Users/anderson/puppet/src/learnin/cpp/music_day	1	bash	:
+pane	0	5	:learnin	0	:	4	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	bash	:
+pane	0	6	:pe-license	0	:	1	:/Users/anderson/puppet/src/pe-client-tools-vanagon	1	bash	:
+pane	0	7	:vanagon	0	:	1	:/Users/anderson/puppet/src/vanagon/bin	1	bash	:
+pane	0	8	:r10k	0	:-	1	:/Users/anderson/puppet/src/r10k/lib/r10k	0	vim	:view puppetfile.rb
+pane	0	8	:r10k	0	:-	2	:/Users/anderson/puppet/src/r10k	1	bash	:
+window	0	1	1	:*	f663,364x83,0,0{181x83,0,0,1,182x83,182,0[182x59,182,0,2,182x23,182,60,3]}
+window	0	2	0	:	82d4,364x83,0,0{181x83,0,0,4,182x83,182,0,5}
+window	0	3	0	:	8f7f,364x83,0,0{173x83,0,0,6,190x83,174,0,7}
+window	0	4	0	:	b1da,364x83,0,0{196x83,0,0,8,167x83,197,0,9}
+window	0	5	0	:	c94a,364x83,0,0[365x42,0,0{182x42,0,0,10,182x42,183,0,11},365x40,0,43{182x40,0,43,12,182x40,183,43,13}]
+window	0	6	0	:	6153,364x83,0,0,14
+window	0	7	0	:	6154,364x83,0,0,15
+window	0	8	0	:-	040b,364x83,0,0{182x83,0,0,16,181x83,183,0,17}
+state	0	

@@ -1,0 +1,21 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	1	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/Google Drive/dock/notes	0	vim	:view 2016-06-29.uxt
+pane	0	1	:notes	1	:*	3	:/Users/anderson/ATTIC/down/00-incoming/music/Santaolalla,_Gustavo/2014-The_Last_of_Us-Left_Behind	0	mplayer	:mplayer 01-Gustavo_Santaolalla-Fleeting.mp3 02-Gustavo_Santaolalla-All_Gone_(Seasons).mp3 03-Andrew_Buresh-Evasion.mp3 04-Gustavo_Santaolalla-All_Gone_(Partners).mp3 05-JD_Mayer-Cause_and_Effect.mp3 06-Gustavo_Santaolalla-All_Gone_(Reunion).mp3 07-Gustavo_Santaolalla-Stalking.mp3 08-Gustavo_Santaolalla-Left_Behind_(Together).mp3 09-Anthony_Caruso-The_Capitol.mp3 10-Gustavo_Santaolalla-Head_Rush.mp3 11-Gustavo_Santaolalla-Wandering.mp3 12-Gustavo_Santaolalla-All_Gone_(Overcome).mp3 13-Gustavo_Santaolalla-Unstable.mp3 14-Gustavo_Santaolalla-The_Last_of_Us_(Astray).mp3 15-JD_Mayer-Answers.mp3 16-Gustavo_Santaolalla-Drawn_In.mp3 17-JD_Mayer-Apprehension.mp3 18-Gustavo_Santaolalla-The_Path_(Vacant).mp3 19-JD_Mayer-Convergence.mp3 20-Gustavo_Santaolalla-Shadows.mp3 21-Gustavo_Santaolalla-No_Mercy.mp3 22-Gustavo_Santaolalla-Fleeting_(Affection).mp3 23-Andrew_Buresh-Extinction.mp3 24-Anthony_Caruso_&_JD_Mayer-Consumed.mp3 25-Gustavo_Santaolalla-Left_Behind.mp3
+pane	0	2	:puppet-code	0	:-	1	:/Users/anderson/puppet/src/puppet-code	1	bash	:
+pane	0	2	:puppet-code	0	:-	2	:/Users/anderson/puppet/src/puppet-code	0	bash	:
+pane	0	3	:puppet-access	0	:	1	:/Users/anderson/puppet/src/puppet-access	1	bash	:
+pane	0	3	:puppet-access	0	:	2	:/Users/anderson/puppet/src/puppet-access/build	0	bash	:
+pane	0	4	:leatherman	0	:	1	:/Users/anderson/puppet/src/leatherman/windows/src	1	vim	:view file_util.cc
+pane	0	4	:leatherman	0	:	2	:/Users/anderson/puppet/src/leatherman	0	bash	:
+pane	0	5	:learnin	0	:	1	:/Users/anderson/puppet/src/learnin/cpp/hello_world	0	vim	:view hello_world.cpp
+pane	0	5	:learnin	0	:	2	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	vim	:vim zimmer.cpp
+pane	0	5	:learnin	0	:	3	:/Users/anderson/puppet/src/learnin/cpp/hello_world	1	bash	:bash
+pane	0	5	:learnin	0	:	4	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	bash	:
+pane	0	6	:vim	0	:	1	:/Users/anderson/puppet/src/orchestrator-client	1	vim	:view lib/src/configuration.cc
+window	0	1	1	:*	f28a,361x82,0,0{180x82,0,0,1,180x82,181,0[180x68,181,0,59,180x13,181,69,61]}
+window	0	2	0	:-	4e81,361x82,0,0{180x82,0,0,25,180x82,181,0,24}
+window	0	3	0	:	e13a,361x82,0,0{194x82,0,0,28,166x82,195,0,43}
+window	0	4	0	:	a551,361x82,0,0{195x82,0,0,29,165x82,196,0,30}
+window	0	5	0	:	1792,360x82,0,0[361x42,0,0{180x42,0,0,31,180x42,181,0,56},361x39,0,43{180x39,0,43,32,180x39,181,43,57}]
+window	0	6	0	:	5e96,361x82,0,0,55
+state	0	

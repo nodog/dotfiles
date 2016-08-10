@@ -1,0 +1,16 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/Google Drive/dock/notes	1	bash	:
+pane	0	2	:puppet-code	0	:	1	:/Users/anderson/puppet/src/puppet-code	1	bash	:
+pane	0	2	:puppet-code	0	:	2	:/Users/anderson/puppet/src/puppet-code	0	bash	:
+pane	0	5	:learnin	0	:-	1	:/Users/anderson/puppet/src/learnin/cpp/music_day	0	vim	:vim music_day.cpp
+pane	0	5	:learnin	0	:-	2	:/Users/anderson/puppet/src/learnin/cpp/boost_nowide	1	vim	:vi test_boost_nowide.cc
+pane	0	5	:learnin	0	:-	3	:/Users/anderson/puppet/src/learnin/cpp/music_day	0	bash	:
+pane	0	5	:learnin	0	:-	4	:/Users/anderson/puppet/src/learnin/cpp/boost_nowide	0	bash	:
+pane	0	10	:pe-client-tools-vanagon	0	:	1	:/Users/anderson/puppet/src/pe-client-tools-vanagon	1	bash	:
+pane	0	11	:bash	0	:	1	:/Users/anderson/puppet/src/nowide	1	bash	:
+window	0	1	1	:*	207a,363x87,0,0{208x87,0,0,1,154x87,209,0,2}
+window	0	2	0	:	207d,363x87,0,0{208x87,0,0,3,154x87,209,0,4}
+window	0	5	0	:-	51f4,363x87,0,0[364x46,0,0{179x46,0,0,8,184x46,180,0,9},364x40,0,47{179x40,0,47,10,184x40,180,47,11}]
+window	0	10	0	:	6917,363x87,0,0,18
+window	0	11	0	:	6918,363x87,0,0,19
+state	0	

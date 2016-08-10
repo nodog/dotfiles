@@ -1,0 +1,27 @@
+pane	0	1	:vim	1	:*	1	:/Users/anderson/Google Drive/dock/notes	1	vim	:vim TODO.uxt
+pane	0	1	:vim	1	:*	2	:/Users/anderson	0	bash	:
+pane	0	2	:puppet-code	0	:-	1	:/Users/anderson/puppet/src/puppet-code/build	1	bash	:
+pane	0	2	:puppet-code	0	:-	2	:/Users/anderson/puppet/src/puppet-code/build	0	bash	:
+pane	0	3	:puppet-access	0	:	1	:/Users/anderson/puppet/src/puppet-access/build	1	bash	:
+pane	0	3	:puppet-access	0	:	2	:/Users/anderson/puppet/src/puppet-access	0	bash	:
+pane	0	4	:leatherman	0	:	1	:/Users/anderson/puppet/src/leatherman/logging/inc/leatherman/logging	1	bash	:
+pane	0	5	:learnin	0	:	1	:/Users/anderson/puppet/src/learnin/cpp/music_day	1	vim	:vim music_day.cpp
+pane	0	5	:learnin	0	:	2	:/Users/anderson/puppet/src/learnin/cpp/hello_world	0	vim	:vim hello_world.cpp
+pane	0	5	:learnin	0	:	3	:/Users/anderson/puppet/src/learnin/cpp/music_day	0	bash	:
+pane	0	5	:learnin	0	:	4	:/Users/anderson/puppet/src/learnin/cpp/hello_world	0	bash	:
+pane	0	6	:bash	0	:	1	:/Users/anderson/puppet/src/cpp-project-template	1	bash	:
+pane	0	7	:vanagon	0	:	1	:/Users/anderson/puppet/src/vanagon/bin	1	bash	:
+pane	0	8	:r10k	0	:	1	:/Users/anderson/puppet/src/r10k/lib/r10k	1	bash	:
+pane	0	8	:r10k	0	:	2	:/Users/anderson/puppet/src/r10k	0	bash	:
+pane	0	9	:code-manager	0	:	1	:/Users/anderson/puppet/src/code-manager	1	bash	:
+pane	0	9	:code-manager	0	:	2	:/Users/anderson/puppet/src/code-manager	0	bash	:
+window	0	1	1	:*	1fee,204x50,0,0{128x50,0,0,1,75x50,129,0,2}
+window	0	2	0	:-	1ff3,204x50,0,0{128x50,0,0,3,75x50,129,0,4}
+window	0	3	0	:	e9bf,204x50,0,0{141x50,0,0,5,62x50,142,0,6}
+window	0	4	0	:	aea4,204x50,0,0,7
+window	0	5	0	:	e7d5,204x50,0,0[205x26,0,0{99x26,0,0,8,105x26,100,0,9},205x23,0,27{99x23,0,27,10,105x23,100,27,11}]
+window	0	6	0	:	5781,204x50,0,0,12
+window	0	7	0	:	5782,204x50,0,0,13
+window	0	8	0	:	b971,204x50,0,0{99x50,0,0,14,104x50,100,0,15}
+window	0	9	0	:	b973,204x50,0,0{99x50,0,0,16,104x50,100,0,17}
+state	0	

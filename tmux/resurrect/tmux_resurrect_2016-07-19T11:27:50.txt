@@ -1,0 +1,21 @@
+pane	0	1	:notes	1	:*	1	:/Users/anderson/Google Drive/dock/notes	0	vim	:vim TODO.uxt
+pane	0	1	:notes	1	:*	2	:/Users/anderson/adm/dotfiles	1	bash	:
+pane	0	1	:notes	1	:*	3	:/Users/anderson/ATTIC/down/00-incoming/music/Santaolalla,_Gustavo/2013-The_Last_of_Us	0	mplayer	:mplayer 01-The_Quarantine_Zone_(20_Years_Later).mp3 02-The_Hour.mp3 03-The_Last_of_Us.mp3 04-Forgotten_Memories.mp3 05-The_Outbreak.mp3 06-Vanishing_Grace.mp3 07-The_Hunters.mp3 08-All_Gone.mp3 09-Vanishing_Grace_(Innocence).mp3 10-By_Any_Means.mp3 11-The_Choice.mp3 12-Smugglers.mp3 13-The_Last_of_Us_(Never_Again).mp3 14-The_Last_of_Us_(Goodnight).mp3 15-I_Know_What_You_Are.mp3 16-Home.mp3 17-Infected.mp3 18-All_Gone_(Aftermath).mp3 19-The_Last_of_Us_(A_New_Dawn).mp3 20-All_Gone_(No_Escape).mp3 21-Vanishing_Grace_(Childhood).mp3 22-The_Path.mp3 23-All_Gone_(Alone).mp3 24-Blackout.mp3 25-The_Way_It_Was.mp3 26-Breathless.mp3 27-The_Last_of_Us_(You_and_Me).mp3 28-All_Gone_(The_Outside).mp3 29-The_Path_(A_New_Beginning).mp3 30-Returning.mp3
+pane	0	2	:puppet-code	0	:-	1	:/Users/anderson/puppet/src/puppet-code	1	bash	:
+pane	0	2	:puppet-code	0	:-	2	:/Users/anderson/puppet/src/puppet-code	0	git	:git diff 2016.3.x
+pane	0	3	:puppet-access	0	:	1	:/Users/anderson/puppet/src/puppet-access	1	bash	:
+pane	0	3	:puppet-access	0	:	2	:/Users/anderson/puppet/src/puppet-access/build	0	bash	:
+pane	0	4	:leatherman	0	:	1	:/Users/anderson/puppet/src/leatherman/windows/src	1	vim	:view file_util.cc
+pane	0	4	:leatherman	0	:	2	:/Users/anderson/puppet/src/leatherman	0	bash	:
+pane	0	5	:learnin	0	:	1	:/Users/anderson/puppet/src/learnin/cpp/hello_world	0	vim	:view hello_world.cpp
+pane	0	5	:learnin	0	:	2	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	vim	:vim zimmer.cpp
+pane	0	5	:learnin	0	:	3	:/Users/anderson/puppet/src/learnin/cpp/hello_world	1	bash	:bash
+pane	0	5	:learnin	0	:	4	:/Users/anderson/puppet/src/learnin/cpp/zimmer	0	bash	:
+pane	0	6	:vim	0	:	1	:/Users/anderson/puppet/src/orchestrator-client	1	vim	:view lib/src/configuration.cc
+window	0	1	1	:*	0164,272x61,0,0{135x61,0,0,1,136x61,136,0[136x30,136,0,2,136x30,136,31,59]}
+window	0	2	0	:-	1b6d,272x61,0,0{135x61,0,0,25,136x61,136,0,24}
+window	0	3	0	:	87da,272x61,0,0{149x61,0,0,28,122x61,150,0,43}
+window	0	4	0	:	4ac1,272x61,0,0{150x61,0,0,29,121x61,151,0,30}
+window	0	5	0	:	9d6c,271x61,0,0[272x31,0,0{135x31,0,0,31,136x31,136,0,56},272x29,0,32{135x29,0,32,32,136x29,136,32,57}]
+window	0	6	0	:	5ae6,272x61,0,0,55
+state	0	
