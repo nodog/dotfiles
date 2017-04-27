@@ -46,6 +46,7 @@ Plugin 'bling/vim-airline'
 "Plugin 'bling/vim-bufferline'
 Plugin 'Buffergator'
 Plugin 'vim-json-bundle'
+Plugin 'rust-lang/rust.vim'
 
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'Lokaltog/vim-easymotion'
@@ -120,6 +121,8 @@ colorscheme inkpot
 "              on this file is still a good idea.
 "
 "---Syntastic-------------------------------
+" Put Syntastic into passive mode first.
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -138,11 +141,11 @@ let g:syntastic_cpp_include_dirs = ['../../include','../../inc','../include','..
 let g:airline_powerline_fonts=1
 "let g:airline_theme='ubaryd'
 let g:airline#extensions#whitespace#enabled=0
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
+" Enable the list of buffers/tabs
+"let g:airline#extensions#tabline#enabled = 1
 "
 " " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
 
 "
 "------------------------------------------------------------
@@ -274,8 +277,9 @@ set pastetoggle=<F10>
 "set conceallevel=0
 let g:vim_json_syntax_conceal = 0
 
-" set the map leader to ","
-:let mapleader = ","
+" set the map leader to "space"
+":let mapleader = ","
+let mapleader = "\<Space>"
 
 " nodog - completion (ctrl-N, ctrl-P)
 " the default (current buffer, other window buffers, buffers in buffer list,

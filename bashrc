@@ -186,3 +186,12 @@ if ( echo $- | grep i ) > /dev/null ; then
 #   alias barrer=lock
 
 fi
+
+##
+# Your previous /Users/anderson/.profile file was backed up as /Users/anderson/.profile.macports-saved_2017-01-31_at_09:38:30
+##
+
+# MacPorts Installer addition on 2017-01-31_at_09:38:30: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

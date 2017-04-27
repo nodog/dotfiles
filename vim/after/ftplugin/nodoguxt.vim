@@ -4,6 +4,8 @@ setl nolist
 "setl formatopitons+=l
 "setlocal breakat=\ 
 setl tw=120
+setl shiftwidth=2
+setl tabstop=2
 "setl wrapmargin=0
 "set t_Co=256
 "hi clear
