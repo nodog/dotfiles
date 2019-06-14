@@ -16,8 +16,8 @@ fi
 
 # I'd like to add some directories to my path if they exist and aren't there already
 myAddToPath="/usr/local/sbin /opt/local/bin /opt/local/sbin \
-   /opt/local/libexec/gnubin/ /usr/local/processing $HOME/bin /sbin /usr/sbin \
-   /opt/local/lib/postgresql94/bin"
+   /opt/local/libexec/gnubin/ /usr/local/processing $HOME/bin /sbin /usr/sbin $HOME/Library/Python/3.7/bin \
+   /opt/local/lib/postgresql94/bin /usr/local/opt/coreutils/libexec/gnubin"
 for myDir in $myAddToPath; do
    if [ -d $myDir ] && echo $PATH | grep -v $myDir > /dev/null; then
       export PATH=$myDir:$PATH
@@ -36,6 +36,9 @@ done
 if ( echo $- | grep i ) > /dev/null ; then
 
    # enable completion in interactive shells
+   if [ -f $(brew --prefix)/etc/bash_completion ]; then
+           . $(brew --prefix)/etc/bash_completion
+   fi
    if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
      . /opt/local/etc/profile.d/bash_completion.sh
    fi
@@ -53,6 +56,10 @@ if ( echo $- | grep i ) > /dev/null ; then
    MYPS1RIGHT=""
    if [ -f /opt/local/share/git/contrib/completion/git-prompt.sh ]; then
      . /opt/local/share/git/contrib/completion/git-prompt.sh
+     MYPS1RIGHT=${White?}'$(__git_ps1 "(%s)")'${Color_Off?}${MYPS1RIGHT?}
+   fi
+   if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
+     . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
      MYPS1RIGHT=${White?}'$(__git_ps1 "(%s)")'${Color_Off?}${MYPS1RIGHT?}
    fi
 
@@ -77,7 +84,7 @@ if ( echo $- | grep i ) > /dev/null ; then
    alias fgrep="fgrep --color=auto"
    alias gzip="gzip -v"
    alias dc="dc -e 5k -"
-   eval `dircolors $HOME/.dir_colors`
+   eval `gdircolors $HOME/.dir_colors`
    alias ls="ls -FNv --dereference-command-line-symlink-to-dir --color=auto -T 0 --time-style=long-iso"
    alias mySuggestMusic="( cd $HOME/PERILO/music; find . -mindepth 2 -maxdepth 2 ) | unsort 2>/dev/null | head -20"
    alias rspec="rspec --color"
@@ -101,6 +108,17 @@ if ( echo $- | grep i ) > /dev/null ; then
 
    # machine specific commands
    case ${HOSTNAME/.*/} in
+      ATH036262)
+
+         if [ -f $HOME/.athena_specifics ]; then
+           . $HOME/.athena_specifics
+         fi
+
+         if [ -d $HOME/down/z ]; then
+     .     $HOME/down/z/z.sh
+         fi
+
+         ;;
       brebis|cheddar|roquefort)
          if ! [ -f $HOME/.myRsync-talkingbone-main ]; then
 	   #echo Cet ordinateur n\'a PAS ta vérité.
@@ -194,4 +212,7 @@ fi
 # MacPorts Installer addition on 2017-01-31_at_09:38:30: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
+
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 

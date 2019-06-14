@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required/
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -42,11 +42,12 @@ Plugin 'ntpeters/vim-better-whitespace'
 " because tpope
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 "Plugin 'bling/vim-bufferline'
 Plugin 'Buffergator'
 Plugin 'vim-json-bundle'
 Plugin 'rust-lang/rust.vim'
+Plugin 'udalov/kotlin-vim'
 
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'Lokaltog/vim-easymotion'
@@ -138,7 +139,7 @@ let g:syntastic_cpp_check_header = 0
 let g:syntastic_cpp_check_header = 0
 let g:syntastic_cpp_include_dirs = ['../../include','../../inc','../include','../inc','include','inc','lib/inc','/usr/include','/usr/local/include','/opt/local/include']
 "---Airline-------------------------------------------------------
-let g:airline_powerline_fonts=1
+"let g:airline_powerline_fonts=1
 "let g:airline_theme='ubaryd'
 let g:airline#extensions#whitespace#enabled=0
 " Enable the list of buffers/tabs
@@ -355,7 +356,6 @@ imap <F1> <nop>
 map <F2> :mksession! ~/.vim_session <cr>
 map <F3> :source ~/.vim_session <cr>
 
-map <F4> qaq:1,$ g/000/y A <cr>
 
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
@@ -365,7 +365,8 @@ map <F4> qaq:1,$ g/000/y A <cr>
 " Map <leader-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <Leader>l :nohl<CR>:redraw<CR>
-nnoremap <Leader>r :StripWhitespace<CR>
+nnoremap <Leader>w :StripWhitespace<CR>
+nnoremap <Leader>r qaq:1,$ g/000/y A <cr>
 
 " map <F7> to write and make the current file using the makeprg and compiler settings
 nmap <F7> :w<CR>:make<CR>
