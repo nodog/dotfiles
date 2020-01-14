@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/Users/jmills/.oh-my-zsh"
+  export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -74,6 +74,7 @@ source $ZSH/oh-my-zsh.sh
 myAddToPath=(
   /sbin
   /usr/sbin
+  /usr/local/bin
   /usr/local/sbin
   /opt/local/bin
   /opt/local/sbin
@@ -135,6 +136,6 @@ fi
 alias ls="ls -FNv --dereference-command-line-symlink-to-dir --color=auto -T 0 --time-style=long-iso"
 alias dc="dc -e 5k -"
 
-export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
+#export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
 
 unsetopt share_history
