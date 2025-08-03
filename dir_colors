@@ -105,6 +105,7 @@ EXEC 01;32
 .mov 01;35
 .m4v 01;35
 .pdf 01;35
+.heic 01;35
 
 # sound formats
 .mp3 01;36

@@ -55,6 +55,8 @@ CASE_SENSITIVE="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
+fpath+=~/.zfunc
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -63,6 +65,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+#  poetry
   git
 )
 
@@ -81,7 +84,8 @@ myAddToPath=(
   /opt/local/libexec/gnubin/
   /usr/local/processing
   $HOME/bin
-  $HOME/Library/Python/3.7/bin
+  $HOME/Library/Python/3.9/bin
+  $HOME/.poetry/bin
   /opt/local/lib/postgresql94/bin
   /usr/local/opt/coreutils/libexec/gnubin
 )
@@ -139,3 +143,11 @@ alias dc="dc -e 5k -"
 #export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
 
 unsetopt share_history
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

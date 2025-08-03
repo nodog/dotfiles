@@ -17,7 +17,7 @@ fi
 # I'd like to add some directories to my path if they exist and aren't there already
 myAddToPath="/usr/local/sbin /opt/local/bin /opt/local/sbin \
    /opt/local/libexec/gnubin/ /usr/local/processing $HOME/bin /sbin /usr/sbin $HOME/Library/Python/3.7/bin \
-   /opt/local/lib/postgresql94/bin /usr/local/opt/coreutils/libexec/gnubin"
+   /opt/local/lib/postgresql94/bin /usr/local/opt/coreutils/libexec/gnubin $HOME/.poetry/bin:$PATH"
 for myDir in $myAddToPath; do
    if [ -d $myDir ] && echo $PATH | grep -v $myDir > /dev/null; then
       export PATH=$myDir:$PATH
@@ -215,4 +215,5 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
 
