@@ -2,74 +2,73 @@ set nocompatible              " be iMproved, required/
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'jyota/vimColors'
-"Plugin 'blueshirts/darcula'
-"Plugin 'DrowsySaturn/VIvid.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'SuperTab'
-Plugin 'bash-support.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Yggdroot/indentLine'
-Plugin 'Puppet-Syntax-Highlighting'
-"Plugin 'matchit.zip'
-"Plugin 'Tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-" tmux
-Plugin 'christoomey/vim-tmux-navigator'
-" for clojure
-Plugin 'tpope/vim-fireplace'
-Plugin 'vim-scripts/vim-niji'
-Plugin 'guns/vim-clojure-highlight'
-"Plugin 'guns/vim-sexp'
-"Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-" for hocon
-Plugin 'GEverding/vim-hocon'
-" for ruby
-Plugin 'ruby-matchit'
-Plugin 'ntpeters/vim-better-whitespace'
-" because tpope
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-"Plugin 'bling/vim-bufferline'
-Plugin 'Buffergator'
-Plugin 'vim-json-bundle'
-Plugin 'rust-lang/rust.vim'
-Plugin 'udalov/kotlin-vim'
-
-"Plugin 'kien/rainbow_parentheses.vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'guns/vim-clojure-static' - included in Vim 7.38X and above.
-
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+"Plugin 'VundleVim/Vundle.vim'
+""Plugin 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
+Plug 'jyota/vimColors'
+""Plugin 'blueshirts/darcula'
+""Plugin 'DrowsySaturn/VIvid.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'ervandew/supertab'
+Plug 'WolfgangMehner/bash-support'
+Plug 'tpope/vim-fugitive'
+Plug 'Yggdroot/indentLine'
+Plug 'rodjek/vim-puppet'
+""Plugin 'matchit.zip'
+""Plugin 'Tabular'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+"" tmux
+Plug 'christoomey/vim-tmux-navigator'
+"" for clojure
+Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/vim-niji'
+Plug 'guns/vim-clojure-highlight'
+""Plugin 'guns/vim-sexp'
+""Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+"" for hocon
+Plug 'GEverding/vim-hocon'
+"" for ruby
+Plug 'vim-scripts/ruby-matchit'
+Plug 'ntpeters/vim-better-whitespace'
+"" because tpope
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'elzr/vim-json'
+Plug 'rust-lang/rust.vim'
+Plug 'udalov/kotlin-vim'
+"
+""Plugin 'kien/rainbow_parentheses.vim'
+""Plugin 'Lokaltog/vim-easymotion'
+""Plugin 'guns/vim-clojure-static' - included in Vim 7.38X and above.
+"
+"" Keep Plugin commands between vundle#begin/end.
+"" plugin on GitHub repo
+"" Plugin 'tpope/vim-fugitive'
+"" plugin from http://vim-scripts.org/vim/scripts.html
+"" Plugin 'L9'
+"" Git plugin not hosted on GitHub
+"" Plugin 'git://git.wincent.com/command-t.git'
+"" git repos on your local machine (i.e. when working on your own plugin)
+"" Plugin 'file:///home/gmarik/path/to/plugin'
+"" The sparkup vim script is in a subdirectory of this repo called vim.
+"" Pass the path to set the runtimepath properly.
+"" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" Avoid a name conflict with L9
+"" Plugin 'user/L9', {'name': 'newL9'}
+"
+"" All of your Plugins must be added before the following line
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -372,7 +371,7 @@ nnoremap <Leader>r qaq:1,$ g/000/y A <cr>
 nmap <F7> :w<CR>:make<CR>
 
 " NERDTree
-nmap <F1> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 
 "let NERDTreeShowHidden=1 
 "autocmd VimEnter * NERDTree 
