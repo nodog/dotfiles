@@ -1,497 +1,144 @@
-set nocompatible              " be iMproved, required/
-filetype off                  " required
+" ============================================================================
+" 1. VIM-PLUG INITIALIZATION & PLUGINS
+" ============================================================================
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-call plug#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-""Plugin 'altercation/vim-colors-solarized'
+" Appearance & UI
 Plug 'flazz/vim-colorschemes'
 Plug 'jyota/vimColors'
-""Plugin 'blueshirts/darcula'
-""Plugin 'DrowsySaturn/VIvid.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
+
+" Utilities & Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
 Plug 'ervandew/supertab'
-Plug 'WolfgangMehner/bash-support'
-Plug 'tpope/vim-fugitive'
-Plug 'Yggdroot/indentLine'
-Plug 'rodjek/vim-puppet'
-""Plugin 'matchit.zip'
-""Plugin 'Tabular'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
-"" tmux
 Plug 'christoomey/vim-tmux-navigator'
-"" for clojure
-Plug 'tpope/vim-fireplace'
-Plug 'vim-scripts/vim-niji'
-Plug 'guns/vim-clojure-highlight'
-""Plugin 'guns/vim-sexp'
-""Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-"" for hocon
-Plug 'GEverding/vim-hocon'
-"" for ruby
-Plug 'vim-scripts/ruby-matchit'
-Plug 'ntpeters/vim-better-whitespace'
-"" because tpope
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'jeetsukumaran/vim-buffergator'
+
+" Syntax, Linting & Language Support
+Plug 'scrooloose/syntastic'
+Plug 'WolfgangMehner/bash-support'
+Plug 'tpope/vim-fugitive'
+Plug 'rodjek/vim-puppet'
+Plug 'GEverding/vim-hocon'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'elzr/vim-json'
 Plug 'rust-lang/rust.vim'
 Plug 'udalov/kotlin-vim'
-"
-""Plugin 'kien/rainbow_parentheses.vim'
-""Plugin 'Lokaltog/vim-easymotion'
-""Plugin 'guns/vim-clojure-static' - included in Vim 7.38X and above.
-"
-"" Keep Plugin commands between vundle#begin/end.
-"" plugin on GitHub repo
-"" Plugin 'tpope/vim-fugitive'
-"" plugin from http://vim-scripts.org/vim/scripts.html
-"" Plugin 'L9'
-"" Git plugin not hosted on GitHub
-"" Plugin 'git://git.wincent.com/command-t.git'
-"" git repos on your local machine (i.e. when working on your own plugin)
-"" Plugin 'file:///home/gmarik/path/to/plugin'
-"" The sparkup vim script is in a subdirectory of this repo called vim.
-"" Pass the path to set the runtimepath properly.
-"" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" Avoid a name conflict with L9
-"" Plugin 'user/L9', {'name': 'newL9'}
-"
-"" All of your Plugins must be added before the following line
-call plug#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
-" My bundles here:
-" programming
-" nodog
-" 2013-12-26
-"
-" vimrc
-" is the run commands file for vim.
-" I'm installing mine in ~/.vim/nodogvimrc/vimrc and then linking that
-" to ~/.vim/vimrc.
+" Clojure & Ruby
+Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/vim-niji'
+Plug 'guns/vim-clojure-highlight'
+Plug 'vim-scripts/ruby-matchit'
 
-"---colorschemes------------
-"set t_Co=256
-" this is necessary so that the CSApprox plugin can run (and the
-" colorscheme is installed in ~/.vim/colors
-"colorscheme candycode
-"colorscheme distinguished
-"let g:solarized_termcolors=256
-"colorscheme solarized
-"set background=dark
+" Editing Enhancements
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
+" ============================================================================
+" 2. CORE VIM BEHAVIOR & FEATURES
+" ============================================================================
+syntax on
+filetype plugin indent on
+
+set hidden
+set wildmenu
+set showcmd
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set autoindent
+set nostartofline
+set ruler
+set laststatus=2
+set visualbell
+set t_vb=
+set mouse=a
+set cmdheight=2
+set number
+set notimeout ttimeout ttimeoutlen=200
+set pastetoggle=<F10>
+set expandtab
+set clipboard=unnamed
+
+" ============================================================================
+" 3. PLUGIN-SPECIFIC CONFIGURATION
+" ============================================================================
+" Theme
 colorscheme inkpot
-"colorscheme 256-grayvim
-"colorscheme matrix
-"colorscheme vividchalk
-"colorscheme dw_orange
-"colorscheme anotherdark
-"colorscheme asu1dark
-"colorscheme scooby
-"colorscheme neverland
-" as is this parameter
-" and it seems to be necessary to change to reporting xterm-color256 in iterm2
 
-" URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
-"
-"---Syntastic-------------------------------
-" Put Syntastic into passive mode first.
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
+" Syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs=1
+let g:syntastic_enable_signs = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_cpp_check_header = 0
-let g:syntastic_cpp_check_header = 0
 let g:syntastic_cpp_include_dirs = ['../../include','../../inc','../include','../inc','include','inc','lib/inc','/usr/include','/usr/local/include','/opt/local/include']
-"---Airline-------------------------------------------------------
-"let g:airline_powerline_fonts=1
-"let g:airline_theme='ubaryd'
-let g:airline#extensions#whitespace#enabled=0
-" Enable the list of buffers/tabs
-"let g:airline#extensions#tabline#enabled = 1
-"
-" " Show just the filename
-"let g:airline#extensions#tabline#fnamemod = ':t'
 
-"
-"------------------------------------------------------------
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
+" Airline & IndentLine
+let g:airline#extensions#whitespace#enabled = 0
+let g:indentLine_char = '·'
 
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-"set nocompatible
+" Better Whitespace
+highlight ExtraWhitespace ctermbg=brown
 
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-"filetype indent plugin on
-
-" Enable syntax highlighting
-syntax on
-
-"---BetterWhiteSpace----------------------------------------------
-:highlight ExtraWhitespace ctermbg=brown
-
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
-set hidden
-
-" Note that not everyone likes working this way (with the hidden option).
-" Alternatives include using tabs or split windows instead of re-using the same
-" window as mentioned above, and/or either of the following options:
-" set confirm
-" set autowriteall
-
-" Better command-line completion
-set wildmenu
-
-" Show partial commands in the last line of the screen
-set showcmd
-
-" Highlight searches (use <leader-L> to temporarily turn off highlighting; see the
-" mapping of <leader-L> below)
-set hlsearch
-
-" allows partial searches as typed
-set incsearch
-
-" Modelines have historically been a source of security vulnerabilities. As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-" set nomodeline
-
-
-"------------------------------------------------------------
-" Usability options {{{1
-"
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
-
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
-
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
-
-" When opening a new line and no filetype-specific indenting is enabled, keep
-" the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
-
-" Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
-set nostartofline
-
-" Display the cursor position on the last line of the screen or in the status
-" line of a window
-set ruler
-
-" Always display the status line, even if only one window is displayed
-set laststatus=2
-
-" Instead of failing a command because of unsaved changes, instead raise a
-" dialogue asking if you wish to save changed files.
-" set confirm
-
-" Use visual bell instead of beeping when doing something wrong
-set visualbell
-
-" And reset the terminal code for the visual bell. If visualbell is set, and
-" this line is also included, vim will neither flash nor beep. If visualbell
-" is unset, this does nothing.
-set t_vb=
-
-" Enable use of the mouse for all modes
-set mouse=a
-
-" Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
-set cmdheight=2
-
-" Display line numbers on the left
-set number
-
-" Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
-
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F10>
-
-" This is apparently for not concealing json quotes on strings
-"set conceallevel=0
+" JSON
 let g:vim_json_syntax_conceal = 0
 
-" set the map leader to "space"
-":let mapleader = ","
+" Clojure
+let g:clojure_align_subforms = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^\.']
+let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,defservice'
+autocmd FileType clojure setlocal lispwords+=GET,POST,PUT,DELETE,HEAD,ANY,context,cond
+
+" Folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+" ============================================================================
+" 4. KEY MAPPINGS & COMMANDS
+" ============================================================================
 let mapleader = "\<Space>"
 
-" nodog - completion (ctrl-N, ctrl-P)
-" the default (current buffer, other window buffers, buffers in buffer list,
-" unloaded buffers in bufferlist, tag completion, and included files
-"set complete=.,w,b,u,t,i
-"set complete=.,w,b,t	    " is derek wyatt's setting
-"
-" movement of splits
+" Disable F1 Help
+nmap <F1> <nop>
+imap <F1> <nop>
+
+" Session Management
+map <F2> :mksession! ~/.vim_session <cr>
+map <F3> :source ~/.vim_session <cr>
+
+" NERDTree Toggle (Overriding Session Management F2 intentionally)
+nmap <F2> :NERDTreeToggle<CR>
+
+" Window Navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
-" DiffOrig
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
-
-"folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
-
-"------------------------------------------------------------
-" statusline
-" set statusline=
-" set statusline +=%1*\ %n\ %*            "buffer number
-" set statusline +=%5*%{&ff}%*            "file format
-" set statusline +=%3*%y%*                "file type
-" set statusline +=%4*\ %<%F%*            "full path
-" set statusline +=%2*%m%*                "modified flag
-" set statusline +=%1*%=%5l%*             "current line
-" set statusline +=%2*/%L%*               "total lines
-" set statusline +=%1*%4v\ %*             "virtual column number
-" set statusline +=%2*0x%04B\ %*          "character under cursor
-" jamessan's
-set statusline=   " clear the statusline for when vimrc is reloaded
-set statusline+=%-3.3n\                      " buffer number
-set statusline+=%F\                          " file name
-set statusline+=%h%m%r%w                     " flags
-set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
-set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
-set statusline+=%{&fileformat}]              " file format
-set statusline+=%=                           " right align
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
-set statusline+=%b,0x%-8B\                   " current char
-set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
-"------------------------------------------------------------
-" Indentation options {{{1
-"
-" Indentation settings according to personal preference.
-
-" Indentation settings for using 2 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
-"set shiftwidth=2
-"set softtabstop=2
-set expandtab
-
-" Indentation settings for using hard tabs for indent. Display tabs as
-" two characters wide.
-"set shiftwidth=2
-"set tabstop=2
-
-
-"------------------------------------------------------------
-" Mappings {{{1
-"
-" Useful mappings
-
-" unmap <F1> to help (unmap doesn't work b/c it's built in)
-nmap <F1> <nop>
-imap <F1> <nop>
-
-map <F2> :mksession! ~/.vim_session <cr>
-map <F3> :source ~/.vim_session <cr>
-
-
-
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-" map Y y$
-
-" Map <leader-L> (redraw screen) to also turn off search highlighting until the
-" next search
+" Formatting & Search Truncation
 nnoremap <Leader>l :nohl<CR>:redraw<CR>
 nnoremap <Leader>w :StripWhitespace<CR>
 nnoremap <Leader>r qaq:1,$ g/000/y A <cr>
 
-" map <F7> to write and make the current file using the makeprg and compiler settings
+" Build Triggers
 nmap <F7> :w<CR>:make<CR>
 
-" NERDTree
-nmap <F2> :NERDTreeToggle<CR>
-
-"let NERDTreeShowHidden=1 
-"autocmd VimEnter * NERDTree 
-
-" autocmd VimEnter * wincmd p
-
-" typing :w!! will auto exapnd to :w !sudo tee % so you can save a readonly file 
-"cmap w!! w !sudo tee >/dev/null %
-
-"------------------------------------------------------------
-" Filetypes
-" filetype on         "default
-" filetype indent on  "default
-" filetype plugin on  "default
-
-" Ruby - moved to ~/.vim/after/ftplugin/ruby.vim
-"autocmd FileType ruby compiler ruby
-"autocmd FileType ruby set makeprg=ruby\ -w\ $*\ %
-" text - moved to ~/.vim/after/ftplugin/text.vim
-"autocmd FileType text setlocal textwidth=0 wrapmargin=0
-
-
-"------------------------------------------------------------
-" Use this with vim-clojure-static
-" It's pretty close but the indentation engine is quite weak so it won't
-" completely match cljfmt
-" See vim-cljfmt for in-editor support
-let g:clojure_align_subforms = 1
-autocmd FileType clojure setlocal lispwords+=GET,POST,PUT,DELETE,HEAD,ANY,context,cond
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^\.']
-let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,defservice'
-
-
-"------------------------------------------------------------
-" for warking with the clipboard on os x
-set clipboard=unnamed
-
-let g:indentLine_char='·'
-
-"---unsectioned previous vimrc-----------------------
-" Things with "above in front are set above this line.
-" I've added a quote in front of every line, because this is an OLD
-" file, and defaults may have changed. I'll get back to these later.
-" I am removing these by hand as I go through and understand them again.
-
-" set background=dark
-" "above set backspace=indent,eol,start
-" set nocindent
-" set cinkeys=0{,0},:,0#,!^F,o,O,e
-" set cinoptions=
-" set cinwords=if,else,while,do,for,switch
-" set clipboard=unnamed
-" set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-" set nocompatible
-" set noerrorbells
-" set noexpandtab
-" set nrformats=hex
-" "above set number
-" filetype on
-" filetype indent on
-" filetype plugin on
-" set guifont=Monaco:h16
-" "above set ignorecase
-" "above set laststatus=2
-" set mouse=a
-" "set mousefocus
-" set patchmode=
-" "above set ruler
-" set nosmartindent
-" set shiftwidth=2
-" "above set showcmd
-" set sidescroll=3
-" "above set smartcase
-" set softtabstop=0
-" "set swapsync=sync
-" set textwidth=72
-" set ttymouse=xterm2
-" set novisualbell
-" "set wildmode=list
-" set wrap
-" "set wrapmargin=10
-"
-" " F1 is taken
-" " F2 starts another chuck shred with the current file
-" "map <F2> :w:!chuck + %
-" " F4 checks the chuck status
-" "map <F4> :!chuck --status
-" " F5 reformats the line
-" map <F5> gq}
-" " F7 removes .wav from the screen and replaces _ and - with space
-" "map <F7> :%s/\(\.wav\\|\.ogg\\|\.mp3\\|\.MP3\\|\.flac\)//g:%s/[_,-]/ /g
-" " F8 changes to the Esperanto keymap
-" "map <F8> :set keymap=esperanto_utf-8
-" " F9 sends the output to latex
-" "map <F7> :w:!make
-" " F10 sends the output to latex
-" "map <F10> :w:!pdflatex %
-" " F11 latex's preproposal
-" "map <F11> :w:!latex dissertation.tex
-" " F12 xdvi's preproposal
-" "map <F12> :w:!xdvi ResearchProposal.dvi &
-"
-" "colors
-" if &t_Co > 1
-"    if has("syntax")
-"       syntax on
-"    endif
-" endif
-"
-" " Only do this part when compiled with support for autocommands.
-" "if has("autocmd")
-" "   autocmd! BufReadPost * "removes the stupid jump-to-last-position
-"    "autocmd! BufRead   *.c,*.cc,*.cpp,*.h,*.html,*.m4    set cin et si ts=3 tw=0 wm=0 nowrap
-" "   autocmd! BufRead   *.c,*.cc,*.cpp,*.h,*.html,*.php,*.m4,*.m,*.rb set cindent expandtab tabstop=2 textwidth=0 wrapmargin=0 nowrap autoindent
-"    "autocmd! BufRead   *.html,*.php,*.m4,*.m set cindent expandtab tabstop=2 textwidth=0 wrapmargin=0 nowrap
-"    "autocmd! BufEnter  *.c,*.cc,*.h
-"    "autocmd! BufLeave  *.c,*.cc,*.cpp,*.h,*.html    set nocin noet nosi ts=8 tw= 70 wm=10 wrap
-" "   autocmd! BufRead   *.orc,*.sco,*.mb2    set cin si ts=8 tw=0 wm=0 nowrap
-"    "autocmd! BufLeave  *.orc,*.sco    set nocin nosi ts=8 tw=70 wm=10 wrap
-" "endif " has("autocmd")
-" "highlight comment ctermfg=darkgreen
-" "highlight string ctermfg=darkcyan
-" "highlight constant ctermfg=cyan
+" Legacy Helpers (Cleaned of dangerous auto-run syntax)
+map <F5> gq}
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis

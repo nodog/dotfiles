@@ -86,6 +86,7 @@ myAddToPath=(
   $HOME/bin
   $HOME/Library/Python/3.9/bin
   $HOME/.poetry/bin
+  $HOME/.local/bin
   /opt/local/lib/postgresql94/bin
   /usr/local/opt/coreutils/libexec/gnubin
 )
@@ -107,11 +108,17 @@ if [ -d $HOME/down/z ]; then
   . $HOME/down/z/z.sh
 fi
 
-if (( $+commands[keychain])); then
-  keychain ~/.ssh/id_rsa
-  . ~/.keychain/${HOST}-sh
+# Check if scutil exists (it will on macOS)
+if command -v scutil >/dev/null 2>&1; then
+    # Set HOST to the LocalHostName (e.g., 'oaxaca.local')
+    export HOST=$(scutil --get LocalHostName)
 fi
 # export MANPATH="/usr/local/man:$MANPATH"
+
+if (( $+commands[keychain])); then
+  keychain ~/.ssh/id_rsa --host oaxaca
+  . ~/.keychain/${HOST}-sh
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -151,3 +158,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# español
+alias vamos_a_actualizar="brew upgrade"
+alias matcha_elegante="$HOME/src/python/high_matcha/venv/bin/python3 $HOME/src/python/high_matcha/high_matcha.py"
