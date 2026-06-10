@@ -19,7 +19,7 @@ plugins=(
 )
 
 # Load Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+[ -f "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
 
 # ==============================================================================
 # 2. ENVIRONMENT & PATH CUSTOMIZATION

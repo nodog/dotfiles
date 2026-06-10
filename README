@@ -4,4 +4,4 @@ git push in the directory to store changes.
 
 git pull then run mydotfilesymlinks to push the changes to the local machine.
 
-You may need to do a :PluginInstall in Vim to grab all the Plugins, b/c they are in submodules :(
+You may need to do a :PlugInstall in Vim to grab all the Plugins, b/c they are in submodules :(
