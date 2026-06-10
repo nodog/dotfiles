@@ -19,7 +19,7 @@ plugins=(
 )
 
 # Load Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+[ -f "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
 
 # ==============================================================================
 # 2. ENVIRONMENT & PATH CUSTOMIZATION
@@ -69,10 +69,10 @@ fi
 # terminal banner
 if command -v figlet >/dev/null 2>&1 && command -v lolcat >/dev/null 2>&1; then
     # Both figlet and lolcat are installed
-    figlet -f standard "$HOST" | lolcat
+    figlet -f graffiti "$HOST" | lolcat
 elif command -v figlet >/dev/null 2>&1; then
     # Only figlet is installed
-    figlet -f standard "$HOST"
+    figlet -f graffiti "$HOST"
 else
     # Neither is installed, fallback to plain text
     echo "Logged into: $HOST"
@@ -80,7 +80,14 @@ fi
 
 # SSH Keychain Initialization
 if (( $+commands[keychain] )); then
-    keychain ~/.ssh/id_rsa
+    # Default to id_rsa, fallback to id_ed25519 if rsa doesn't exist
+    if [[ -f ~/.ssh/id_rsa ]]; then
+        keychain ~/.ssh/id_rsa
+    elif [[ -f ~/.ssh/id_ed25519 ]]; then
+        keychain ~/.ssh/id_ed25519
+    fi
+
+    # Source the keychain environment if the file exists
     [[ -f ~/.keychain/${HOST}-sh ]] && . ~/.keychain/${HOST}-sh
 fi
 
