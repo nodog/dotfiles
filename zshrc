@@ -1,164 +1,99 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-  export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="ys"
+# ==============================================================================
+# 1. CORE OH-MY-ZSH CONFIGURATION
+# ==============================================================================
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="steeef"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
+# Completion & History Settings
 CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
+unsetopt share_history
 
+# Function Path
 fpath+=~/.zfunc
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins (Add wisely to prevent slow startup)
 plugins=(
-#  poetry
-  git
+    git
+    # poetry
 )
 
+# Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# I'd like to add some directories to my path if they exist and aren't there already
+# ==============================================================================
+# 2. ENVIRONMENT & PATH CUSTOMIZATION
+# ==============================================================================
+# Native Zsh array for clean PATH building (filters out duplicates and missing dirs)
+typeset -U path
 myAddToPath=(
-  /sbin
-  /usr/sbin
-  /usr/local/bin
-  /usr/local/sbin
-  /opt/local/bin
-  /opt/local/sbin
-  /opt/local/libexec/gnubin/
-  /usr/local/processing
-  $HOME/bin
-  $HOME/Library/Python/3.9/bin
-  $HOME/.poetry/bin
-  $HOME/.local/bin
-  /opt/local/lib/postgresql94/bin
-  /usr/local/opt/coreutils/libexec/gnubin
+    /sbin
+    /usr/bin
+    /usr/sbin
+    /usr/local/bin
+    /usr/local/sbin
+    /opt/local/bin
+    /opt/local/sbin
+    /opt/local/libexec/gnubin/
+    /usr/local/processing
+    $HOME/bin
+    $HOME/Library/Python/3.9/bin
+    $HOME/.poetry/bin
+    $HOME/.local/bin
+    /opt/local/lib/postgresql94/bin
+    /usr/local/opt/coreutils/libexec/gnubin
 )
+
 for myDir in $myAddToPath; do
-   if [ -d $myDir ] ; then
-     if echo $PATH | grep -v $myDir > /dev/null; then
-       path=($myDir $path)
-     else
-       path=($myDir ${path#$myDir})
-     fi
-   fi
+    [[ -d "$myDir" ]] && path=("$myDir" $path)
 done
 export PATH
 
-if [ -f $HOME/.athena_specifics ]; then
-  . $HOME/.athena_specifics
-fi
-if [ -d $HOME/down/z ]; then
-  . $HOME/down/z/z.sh
-fi
+# Homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 
-# Check if scutil exists (it will on macOS)
+# Node Version Manager (NVM)
+export NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
+
+# ==============================================================================
+# 3. SYSTEM & HARDWARE CONFIGURATION
+# ==============================================================================
+# macOS Hostname Setup
 if command -v scutil >/dev/null 2>&1; then
-    # Set HOST to the LocalHostName (e.g., 'oaxaca.local')
     export HOST=$(scutil --get LocalHostName)
 fi
-# export MANPATH="/usr/local/man:$MANPATH"
 
-if (( $+commands[keychain])); then
-  keychain ~/.ssh/id_rsa --host oaxaca
-  . ~/.keychain/${HOST}-sh
+# terminal banner
+if command -v figlet >/dev/null 2>&1 && command -v lolcat >/dev/null 2>&1; then
+    # Both figlet and lolcat are installed
+    figlet -f standard "$HOST" | lolcat
+elif command -v figlet >/dev/null 2>&1; then
+    # Only figlet is installed
+    figlet -f standard "$HOST"
+else
+    # Neither is installed, fallback to plain text
+    echo "Logged into: $HOST"
 fi
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# SSH Keychain Initialization
+if (( $+commands[keychain] )); then
+    keychain ~/.ssh/id_rsa
+    [[ -f ~/.keychain/${HOST}-sh ]] && . ~/.keychain/${HOST}-sh
+fi
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# ==============================================================================
+# 4. CONDITIONAL IMPORTS & ALIASES
+# ==============================================================================
+# External Scripts
+[[ -d $HOME/down/z ]]         && . $HOME/down/z/z.sh
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Standard Aliases
 alias ls="ls -FNv --dereference-command-line-symlink-to-dir --color=auto -T 0 --time-style=long-iso"
 alias dc="dc -e 5k -"
 
-#export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
-
-unsetopt share_history
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# español
+# Personal/Español Aliases
 alias vamos_a_actualizar="brew upgrade"
 alias matcha_elegante="$HOME/src/python/high_matcha/venv/bin/python3 $HOME/src/python/high_matcha/high_matcha.py"
