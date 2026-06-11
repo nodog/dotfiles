@@ -15,7 +15,8 @@ fpath+=~/.zfunc
 # Plugins (Add wisely to prevent slow startup)
 plugins=(
     git
-    # poetry
+    poetry
+    virtualenv
 )
 
 # Load Oh My Zsh
@@ -40,7 +41,7 @@ myAddToPath=(
     $HOME/.poetry/bin
     $HOME/.local/bin
     /opt/local/lib/postgresql94/bin
-    /usr/local/opt/coreutils/libexec/gnubin
+    /opt/homebrew/opt/coreutils/libexec/gnubin
 )
 
 for myDir in $myAddToPath; do
@@ -68,10 +69,10 @@ fi
 # terminal banner
 if command -v figlet >/dev/null 2>&1 && command -v lolcat >/dev/null 2>&1; then
     # Both figlet and lolcat are installed
-    figlet -f graffiti "$HOST" | lolcat
+    figlet -f graffiti -w $(tput cols) "$HOST" | lolcat
 elif command -v figlet >/dev/null 2>&1; then
     # Only figlet is installed
-    figlet -f graffiti "$HOST"
+    figlet -f graffiti -w $(tput cols) "$HOST"
 else
     # Neither is installed, fallback to plain text
     echo "Logged into: $HOST"
@@ -93,12 +94,14 @@ fi
 # ==============================================================================
 # 4. CONDITIONAL IMPORTS & ALIASES
 # ==============================================================================
-# External Scripts
+# Local configurations / Third-party tools
+[[ -f $HOME/.zepz_specifics ]] && . $HOME/.zepz_specifics
 [[ -d $HOME/down/z ]]         && . $HOME/down/z/z.sh
 
 # Standard Aliases
 alias ls="ls -FNv --dereference-command-line-symlink-to-dir --color=auto -T 0 --time-style=long-iso"
 alias dc="dc -e 5k -"
+alias epochtime="date +%s"
 
 # Personal/Español Aliases
 alias vamos_a_actualizar="brew upgrade"
