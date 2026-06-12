@@ -37,10 +37,7 @@ myAddToPath=(
     /opt/local/libexec/gnubin/
     /usr/local/processing
     $HOME/bin
-    $HOME/Library/Python/3.9/bin
-    $HOME/.poetry/bin
     $HOME/.local/bin
-    /opt/local/lib/postgresql94/bin
     /opt/homebrew/opt/coreutils/libexec/gnubin
 )
 
