@@ -105,9 +105,12 @@ alias epochtime="date +%s"
 # Custom alias for system updates based on OS
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux Mint (Ubuntu/Debian based)
-    alias vamos_a_actualizar="sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y"
+    alias vamos_a_actualizar='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && flatpak update -y && flatpak uninstall --unused -y'
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS (Homebrew)
     alias vamos_a_actualizar="brew update && brew upgrade && brew cleanup"
 fi
 alias matcha_elegante="$HOME/src/python/high_matcha/venv/bin/python3 $HOME/src/python/high_matcha/high_matcha.py"
+
+# for uv
+. "$HOME/.local/bin/env"
