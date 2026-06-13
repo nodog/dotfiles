@@ -34,10 +34,10 @@ myAddToPath=(
     /usr/local/sbin
     /opt/local/bin
     /opt/local/sbin
-    /opt/local/libexec/gnubin/
     /usr/local/processing
     $HOME/bin
     $HOME/.local/bin
+    /usr/local/opt/coreutils/libexec/gnubin/
     /opt/homebrew/opt/coreutils/libexec/gnubin
 )
 
