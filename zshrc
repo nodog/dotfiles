@@ -8,6 +8,7 @@ ZSH_THEME="steeef"
 CASE_SENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 unsetopt share_history
+unsetopt autocd
 
 # Function Path
 fpath+=~/.zfunc
