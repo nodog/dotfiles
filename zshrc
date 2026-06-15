@@ -95,6 +95,7 @@ fi
 # Local configurations / Third-party tools
 [[ -f $HOME/.zepz_specifics ]] && . $HOME/.zepz_specifics
 [[ -d $HOME/down/z ]]         && . $HOME/down/z/z.sh
+[[ -f $HOME/.local/bin/env ]] && . "$HOME/.local/bin/env"
 
 # Standard Aliases
 alias ls="ls -FNv --dereference-command-line-symlink-to-dir --color=auto -T 0 --time-style=long-iso"
@@ -111,6 +112,3 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias vamos_a_actualizar="brew update && brew upgrade && brew cleanup"
 fi
 alias matcha_elegante="$HOME/src/python/high_matcha/venv/bin/python3 $HOME/src/python/high_matcha/high_matcha.py"
-
-# for uv
-. "$HOME/.local/bin/env"
