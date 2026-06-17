@@ -69,6 +69,24 @@ set pastetoggle=<F10>
 set expandtab
 set clipboard=unnamedplus
 
+" Toggle Zen Mode
+function! ToggleZenMode()
+    if &number
+        set nonumber
+        set norelativenumber
+        set laststatus=0
+        set noshowmode
+        set signcolumn=no
+        set noruler
+    else
+        set number
+        set laststatus=2
+        set showmode
+        set signcolumn=auto
+        set ruler
+    endif
+endfunction
+
 " ============================================================================
 " 3. PLUGIN-SPECIFIC CONFIGURATION
 " ============================================================================
@@ -135,6 +153,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <Leader>l :nohl<CR>:redraw<CR>
 nnoremap <Leader>w :StripWhitespace<CR>
 nnoremap <Leader>r qaq:1,$ g/000/y A <cr>
+" Map ToggleZenMode
+nnoremap <Leader>z :call ToggleZenMode()<CR>
+
 
 " Build Triggers
 nmap <F7> :w<CR>:make<CR>
