@@ -16,7 +16,6 @@ fpath+=~/.zfunc
 # Plugins (Add wisely to prevent slow startup)
 plugins=(
     git
-    poetry
     virtualenv
 )
 
