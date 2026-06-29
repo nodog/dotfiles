@@ -67,7 +67,7 @@ set number
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F10>
 set expandtab
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 " Toggle Zen Mode
 function! ToggleZenMode()
